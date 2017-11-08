@@ -30,7 +30,7 @@ public class SideBarFrag extends Fragment{
 
             }
         });
-        
+
         locationImg.setImageResource(R.drawable.placeholder);
         calendarImg.setImageResource(R.drawable.calendar);
 
