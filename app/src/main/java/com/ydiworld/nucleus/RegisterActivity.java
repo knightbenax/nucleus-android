@@ -1,4 +1,4 @@
-package com.tamu.sam.lavet.mest.campjoseph;
+package com.ydiworld.nucleus;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

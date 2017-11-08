@@ -1,4 +1,4 @@
-package com.tamu.sam.lavet.mest.campjoseph;
+package com.ydiworld.nucleus;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -30,6 +30,7 @@ public class SideBarFrag extends Fragment{
 
             }
         });
+        
         locationImg.setImageResource(R.drawable.placeholder);
         calendarImg.setImageResource(R.drawable.calendar);
 
