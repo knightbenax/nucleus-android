@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_parent);
 
-        Fragment personFrag = new PersonFrag();
+        Fragment personFrag = new EventFrag();
 //        Fragment sideFrag = new SideBarFrag();
 
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
