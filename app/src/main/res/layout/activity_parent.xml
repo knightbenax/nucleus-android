@@ -15,7 +15,7 @@
        android:layout_height="match_parent"
        android:layout_weight="3"
        android:id="@+id/sideBtn"
-       class="com.tamu.sam.lavet.mest.campjoseph.SideBarFrag"
+       class="com.ydiworld.nucleus.SideBarFrag"
        tools:layout="@layout/side_btns"/>
 
     <FrameLayout
