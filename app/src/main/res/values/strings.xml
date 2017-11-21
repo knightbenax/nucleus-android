@@ -3,4 +3,8 @@
     <string name="register_header">Nucleus</string>
     <string name="sub_header">The Official App of YDI\'s Camp joseph</string>
     <string name="register">Register</string>
+    <string name="venue">Venue:</string>
+    <string name="theplace">Faith Academy,\nCanaanland, Ota</string>
+    <string name="uber">Uber</string>
+    <string name="direction">Directions</string>
 </resources>

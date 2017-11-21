@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:name="com.google.android.gms.maps.SupportMapFragment"
+    android:id="@+id/map"
+    tools:context=".MapActivity">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:paddingLeft="8dp"
+            android:paddingStart="8dp"
+            android:paddingRight="8dp"
+            android:paddingEnd="8dp"
+            android:layout_marginTop="32dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/person"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/man"
+                android:scaleType="center"
+                android:scaleX="0.43"
+                android:scaleY="0.43"
+                android:adjustViewBounds="true"/>
+
+            <ImageView
+                android:id="@+id/location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/placeholder"
+                android:scaleType="center"
+                android:scaleX="0.43"
+                android:scaleY="0.43"
+                android:adjustViewBounds="true"/>
+
+            <ImageView
+                android:id="@+id/calendar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/calendar"
+                android:scaleType="center"
+                android:scaleX="0.4"
+                android:scaleY="0.4"
+                android:adjustViewBounds="true"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="8dp"
+            android:paddingStart="8dp"
+            android:paddingRight="16dp"
+            android:paddingEnd="16dp"
+            android:layout_marginTop="50dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/venue"
+                android:textSize="30sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/theplace"
+                android:textSize="30sp"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/uber"
+                    android:textColor="@color/black"
+                    android:background="@drawable/white_bg"
+                    android:layout_marginRight="20dp"
+                    android:minHeight="42dp"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/direction"
+                    android:textColor="@color/black"
+                    android:background="@drawable/white_bg"
+                    android:minHeight="42dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</fragment>
