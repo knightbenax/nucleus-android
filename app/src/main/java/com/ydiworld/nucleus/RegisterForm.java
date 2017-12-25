@@ -108,7 +108,7 @@ public class RegisterForm extends AppCompatActivity {
                 } else {
 
 
-                    //hideSoftKeyboard(RegisterForm.this);
+                    hideSoftKeyboard(RegisterForm.this);
                     binding.content.setVisibility(View.GONE);
                     binding.loader.setVisibility(View.VISIBLE);
                     connectApi(BASE_URL, fullName, userPhone, userEmail, userHear, userCareer, userFirst, userGender);
@@ -128,9 +128,11 @@ public class RegisterForm extends AppCompatActivity {
 
     Unregistrar mUnregistrar;
 
-    public static void hideSoftKeyboard(Activity activity) {
-        InputMethodManager inputMethodManager = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
-        inputMethodManager.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(), 0);
+    public void hideSoftKeyboard(Activity activity) {
+        //InputMethodManager inputMethodManager = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        //inputMethodManager.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(), 0);
+        InputMethodManager imm = (InputMethodManager)this.getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(binding.fullname.getWindowToken(), 0);
     }
 
     private void setThingsUp(){
