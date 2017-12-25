@@ -247,8 +247,14 @@ public class RegisterForm extends AppCompatActivity {
             @Override
             public void onResponse(Call<NewUser> call, Response<NewUser> response) {
                 if (response.isSuccessful()){
-                    Log.e("X", response.toString());
-                    lunchActivity();
+                    String fullname = response.body().getParticipant().getFullname();
+                    String phone = response.body().getParticipant().getPhone();
+                    String email = response.body().getParticipant().getEmail();
+                    String hear = response.body().getParticipant().getHearAboutCamp();
+                    String career = response.body().getParticipant().getCareer();
+                    String first = response.body().getParticipant().getFirstTimeAtCamp();
+                    String gender = response.body().getParticipant().getGender();
+                    lunchActivity(fullname,phone,email,hear,career,first,gender);
                 }
             }
 
@@ -259,8 +265,17 @@ public class RegisterForm extends AppCompatActivity {
         });
     }
 
-    private void lunchActivity(){
+    private void lunchActivity(String name,String phone, String email, String hear, String career, String first, String gender){
         Intent intent = new Intent(this, MainActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putString("fullname", name);
+        bundle.putString("phone", phone);
+        bundle.putString("email", email);
+        bundle.putString("hear", hear);
+        bundle.putString("career", career);
+        bundle.putString("first", first);
+        bundle.putString("gender", gender);
+        intent.putExtra("userDetail", bundle);
         startActivity(intent);
     }
 }
