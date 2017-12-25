@@ -11,7 +11,7 @@ import retrofit2.http.POST;
 
 
 public interface NucleusInterface {
-    @POST("/api/register/participant")
+    @POST("/api/register/new")
     @FormUrlEncoded
     Call<NewUser> createUser(
             @Field("name") String name,
@@ -21,5 +21,12 @@ public interface NucleusInterface {
             @Field("career") String career,
             @Field("first") String first,
             @Field("gender") String gender
+    );
+
+
+    @POST("/api/register/participant")
+    @FormUrlEncoded
+    Call<NewUser> siginInUser(
+            @Field("email") String email
     );
 }

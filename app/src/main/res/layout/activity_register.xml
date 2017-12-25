@@ -1,49 +1,98 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    >
+
+<RelativeLayout
+
+    tools:context="com.ydiworld.nucleus.RegisterActivity"
     android:layout_height="match_parent"
-    tools:context="com.ydiworld.nucleus.RegisterActivity">
+    android:layout_width="match_parent">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/register_header"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.44" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/sub_header"
-        android:textSize="18sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+    <com.cesards.cropimageview.CropImageView
+        android:layout_width="match_parent"
+        custom:crop="centerBottom"
+        android:src="@drawable/bg"
+        android:layout_height="match_parent" />
 
-    <Button
-        android:id="@+id/regBtn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="90dp"
-        android:background="@drawable/green_bg"
-        android:textColor="@color/white"
-        android:text="@string/register"
-        android:textAllCaps="false"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        />
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="#00ffffff"
+        android:layout_height="match_parent"
+        >
 
-</android.support.constraint.ConstraintLayout>
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/register_header"
+            android:textSize="40sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            fontPath="fonts/Cabin/Cabin-Bold-TTF.ttf"
+            tools:ignore="MissingPrefix"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.40" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sub_header"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <Button
+            android:id="@+id/regBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="90dp"
+            android:elevation="10dp"
+            android:background="@drawable/green_bg"
+            android:textColor="@color/black"
+            android:text="@string/register"
+            fontPath="fonts/Cabin/Cabin-Bold-TTF.ttf"
+            tools:ignore="MissingPrefix"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            />
+
+        <Button
+            android:id="@+id/signInBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="10dp"
+            android:elevation="10dp"
+            android:background="@null"
+            android:textColor="@color/gray"
+            android:text="@string/signin"
+            fontPath="fonts/Cabin/Cabin-Bold-TTF.ttf"
+            tools:ignore="MissingPrefix"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/regBtn"
+            />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</RelativeLayout>
+
+</layout>

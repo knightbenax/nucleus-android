@@ -1,10 +1,26 @@
 <resources>
-    <string name="app_name">CampJoseph</string>
+    <string name="app_name">Nucleus</string>
     <string name="register_header">Nucleus</string>
-    <string name="sub_header">The Official App of YDI\'s Camp joseph</string>
+    <string name="sub_header">The Official App of YDI\'s Camp Joseph</string>
     <string name="register">Register</string>
+    <string name="signin">Registered? Sign In</string>
     <string name="venue">Venue:</string>
     <string name="theplace">Faith Academy,\nCanaanland, Ota</string>
     <string name="uber">Uber</string>
     <string name="direction">Directions</string>
+    <string name="full_name">Full Name</string>
+    <string name="full_name_hint">Your firstname + surname</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="email_address">Email Address</string>
+    <string name="hear_from">How did you hear about Camp Joseph?</string>
+    <string name="career">Career</string>
+    <string name="first_time">First time at Camp Joseph?</string>
+    <string name="back_btn"></string>
+    <string name="male_of_female_obviously">Male of Female. Obviously</string>
+    <string name="gender">Gender</string>
+    <string name="where_we_are_sending_your_iv_no_spams">Where we are sending your IV. No spams</string>
+    <string name="tell_us_we_love_a_good_gist">Tell us. We love a good gist</string>
+    <string name="student_graduate_engineer_batman">Student? Graduate? Engineer? Batman?</string>
+    <string name="always_a_first_time_for_everything">Always a first time for everything</string>
+    <string name="sign_in">Sign In</string>
 </resources>
