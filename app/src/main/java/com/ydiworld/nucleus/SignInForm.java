@@ -8,22 +8,15 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 
-import com.afollestad.materialdialogs.MaterialDialog;
-import com.ydiworld.nucleus.databinding.ActivityRegisterFormBinding;
-
-import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEvent;
-import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEventListener;
-import net.yslibrary.android.keyboardvisibilityevent.Unregistrar;
+import com.ydiworld.nucleus.databinding.ActivitySignInFormBinding;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -33,85 +26,42 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 /**
- * Created by sammy on 12/24/17.
+ * Created by Bezaleel Ashefor.
  */
 
-public class RegisterForm extends AppCompatActivity {
+public class SignInForm extends AppCompatActivity {
 
-    EditText name,phone,email,hear,career,first,gender;
+    EditText email;
     Button regUserBtn;
     private final String BASE_URL = "http://campjoseph.ydiworld.org/";
     private Retrofit retrofit = null;
 
-
-    private ActivityRegisterFormBinding binding;
-
-    // we start with the keyboard hidden. We can to trick the activity
-    // to set the flags back on when we press back. Because Android is a bastard.
-    // TEMP: Didn't use again
-    private boolean keyboardVisible = false;
-
+    private ActivitySignInFormBinding binding;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_register_form);
+        setContentView(R.layout.activity_sign_in_form);
 
-        name = findViewById(R.id.fullname);
-        phone = findViewById(R.id.phone);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_sign_in_form);
+
         email = findViewById(R.id.email);
-        hear = findViewById(R.id.hear);
-        career = findViewById(R.id.career);
-        first = findViewById(R.id.first);
-        gender = findViewById(R.id.gender);
-        regUserBtn = findViewById(R.id.registerbtn);
+        //regUserBtn = findViewById(R.id.registerbtn);
 
-
-
-        regUserBtn.setOnClickListener(new View.OnClickListener() {
+        binding.signInbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String fullName = name.getText().toString();
-                String userPhone = phone.getText().toString();
                 String userEmail = email.getText().toString();
-                String userHear = hear.getText().toString();
-                String userCareer = career.getText().toString();
-                String userFirst = first.getText().toString();
-                String userGender = gender.getText().toString();
-
-                if (fullName.equals("")){
-                    showBasicDialog("Field empty", "You haven't filled out your name yet.", "Okay");
-                } else if (userPhone.equals("")){
-                    showBasicDialog("Field empty", "You haven't filled out your phone number.", "Okay");
-                } else if (userEmail.equals("")){
-                    showBasicDialog("Field empty", "You haven't filled out your email yet.", "Okay");
-                } else if(userHear.equals("")){
-                    showBasicDialog("Field empty", "You haven't filled out your email yet.", "Okay");
-                }
-
-                connectApi(BASE_URL, fullName, userPhone, userEmail, userHear, userCareer, userFirst, userGender);
+                connectApi(BASE_URL, userEmail);
             }
         });
-
-
 
         setThingsUp();
 
     }
 
-    private void showBasicDialog(String title, String content, String agree){
-        new MaterialDialog.Builder(this)
-                .title(title)
-                .content(content)
-                .positiveText(agree)
-                .show();
-    }
-
-    Unregistrar mUnregistrar;
-
     private void setThingsUp(){
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_register_form);
 
         setWinFlags();
 
@@ -119,23 +69,8 @@ public class RegisterForm extends AppCompatActivity {
             callThePolice();
         }
 
-        //hack to set back the windowFlags on keyboard hide
-        mUnregistrar = KeyboardVisibilityEvent.registerEventListener(this, new KeyboardVisibilityEventListener() {
-            @Override
-            public void onVisibilityChanged(boolean isOpen) {
-                if(!isOpen){
-                    setWinFlags();
-                }
-            }
-        });
 
 
-        binding.backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
     }
 
 
@@ -227,7 +162,7 @@ public class RegisterForm extends AppCompatActivity {
     }
 
 
-    private void connectApi(String base_url, String fullname, String userPhone, String userEmail, String userHear, String usercareer, String userFirst, String userGender) {
+    private void connectApi(String base_url, String userEmail) {
         if (retrofit == null){
             retrofit = new Retrofit.Builder()
                     .baseUrl(base_url)
@@ -236,7 +171,7 @@ public class RegisterForm extends AppCompatActivity {
         }
 
         NucleusInterface nucleusInterface = retrofit.create(NucleusInterface.class);
-        nucleusInterface.createUser(fullname,userPhone,userEmail,userHear,usercareer,userFirst, userGender).enqueue(new Callback<NewUser>() {
+        nucleusInterface.siginInUser(userEmail).enqueue(new Callback<NewUser>() {
             @Override
             public void onResponse(Call<NewUser> call, Response<NewUser> response) {
                 if (response.isSuccessful()){
