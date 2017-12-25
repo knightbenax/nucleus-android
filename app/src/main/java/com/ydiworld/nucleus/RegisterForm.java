@@ -1,5 +1,6 @@
 package com.ydiworld.nucleus;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
@@ -67,21 +69,30 @@ public class RegisterForm extends AppCompatActivity {
         gender = findViewById(R.id.gender);
         regUserBtn = findViewById(R.id.registerbtn);
 
-
-
-        regUserBtn.setOnClickListener(new View.OnClickListener() {
+        /*regUserBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String fullName = name.getText().toString();
-                String userPhone = phone.getText().toString();
-                String userEmail = email.getText().toString();
-                String userHear = hear.getText().toString();
-                String userCareer = career.getText().toString();
-                String userFirst = first.getText().toString();
-                String userGender = gender.getText().toString();
+
+            }
+        });*/
+
+
+
+        setThingsUp();
+
+        binding.registerbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String fullName = binding.fullname.getText().toString();
+                String userPhone = binding.phone.getText().toString();
+                String userEmail = binding.email.getText().toString();
+                String userHear = binding.hear.getText().toString();
+                String userCareer = binding.career.getText().toString();
+                String userFirst = binding.first.getText().toString();
+                String userGender = binding.gender.getText().toString();
 
                 if (fullName.equals("")){
-                    showBasicDialog("Field empty", "You haven't filled out your name yet.", "Okay");
+                    showBasicDialog("Field empty" + fullName, "You haven't filled out your name yet.", "Okay");
                 } else if (userPhone.equals("")){
                     showBasicDialog("Field empty", "You haven't filled out your phone number.", "Okay");
                 } else if (userEmail.equals("")){
@@ -96,14 +107,14 @@ public class RegisterForm extends AppCompatActivity {
                     showBasicDialog("Field empty", "You haven't filled out your gender yet. Hope all is well?", "Okay");
                 } else {
 
+
+                    //hideSoftKeyboard(RegisterForm.this);
+                    binding.content.setVisibility(View.GONE);
+                    binding.loader.setVisibility(View.VISIBLE);
                     connectApi(BASE_URL, fullName, userPhone, userEmail, userHear, userCareer, userFirst, userGender);
                 }
             }
         });
-
-
-
-        setThingsUp();
 
     }
 
@@ -117,6 +128,11 @@ public class RegisterForm extends AppCompatActivity {
 
     Unregistrar mUnregistrar;
 
+    public static void hideSoftKeyboard(Activity activity) {
+        InputMethodManager inputMethodManager = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(), 0);
+    }
+
     private void setThingsUp(){
         binding = DataBindingUtil.setContentView(this, R.layout.activity_register_form);
 
@@ -126,11 +142,91 @@ public class RegisterForm extends AppCompatActivity {
             callThePolice();
         }
 
+
+
         //hack to set back the windowFlags on keyboard hide
         mUnregistrar = KeyboardVisibilityEvent.registerEventListener(this, new KeyboardVisibilityEventListener() {
             @Override
             public void onVisibilityChanged(boolean isOpen) {
                 if(!isOpen){
+                    setWinFlags();
+                }
+            }
+        });
+
+
+        binding.fullname.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean hasFocus) {
+                if(hasFocus){
+                    clearWinFlags();
+                } else {
+                    setWinFlags();
+                }
+            }
+        });
+
+        binding.phone.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean hasFocus) {
+                if(hasFocus){
+                    clearWinFlags();
+                } else {
+                    setWinFlags();
+                }
+            }
+        });
+
+        binding.email.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean hasFocus) {
+                if(hasFocus){
+                    clearWinFlags();
+                } else {
+                    setWinFlags();
+                }
+            }
+        });
+
+        binding.hear.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean hasFocus) {
+                if(hasFocus){
+                    clearWinFlags();
+                } else {
+                    setWinFlags();
+                }
+            }
+        });
+
+        binding.career.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean hasFocus) {
+                if(hasFocus){
+                    clearWinFlags();
+                } else {
+                    setWinFlags();
+                }
+            }
+        });
+
+        binding.first.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean hasFocus) {
+                if(hasFocus){
+                    clearWinFlags();
+                } else {
+                    setWinFlags();
+                }
+            }
+        });
+
+        binding.gender.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean hasFocus) {
+                if(hasFocus){
+                    clearWinFlags();
+                } else {
                     setWinFlags();
                 }
             }
@@ -248,6 +344,7 @@ public class RegisterForm extends AppCompatActivity {
             public void onResponse(Call<NewUser> call, Response<NewUser> response) {
                 if (response.isSuccessful()){
 
+                    Log.e("X", response.body().getReason());
                     String fullname = response.body().getParticipant().getFullname();
                     String phone = response.body().getParticipant().getPhone();
                     String email = response.body().getParticipant().getEmail();
@@ -262,7 +359,7 @@ public class RegisterForm extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<NewUser> call, Throwable t) {
-
+                showBasicDialog("Error", "Sorry, an error occured. Please try again", "Okay");
             }
         });
     }
