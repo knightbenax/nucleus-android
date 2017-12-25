@@ -18,11 +18,18 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_parent);
 
-        Fragment personFrag = new EventFrag();
+        Fragment personFrag = new PersonFrag();
+        Fragment eventFrag = new EventFrag();
 //        Fragment sideFrag = new SideBarFrag();
 
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
 
         fragmentTransaction.add(R.id.mainArea, personFrag).commit();
+    }
+
+    private void changeScreens(String screen){
+        if(screen == "person"){
+            
+        }
     }
 }
