@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
+    android:baselineAligned="true"
     android:orientation="horizontal"
     android:background="@drawable/gradient_bg">
 
@@ -12,13 +12,12 @@
    <fragment
        android:layout_width="wrap_content"
        android:layout_height="match_parent"
-
        android:id="@+id/sideBtn"
        class="com.ydiworld.nucleus.SideBarFrag"
        tools:layout="@layout/side_btns"/>
 
     <FrameLayout
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:id="@+id/mainArea"/>
