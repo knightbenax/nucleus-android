@@ -104,7 +104,7 @@
                             android:nextFocusDown="@id/gender"
                             android:hint="@string/full_name_hint"
                             android:textColorHint="@color/black"
-                            android:inputType="textEmailAddress"
+                            android:inputType="text"
                             android:backgroundTint="@color/black"
                             android:id="@+id/fullname"
                             android:layout_height="wrap_content" />

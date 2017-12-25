@@ -87,10 +87,17 @@ public class RegisterForm extends AppCompatActivity {
                 } else if (userEmail.equals("")){
                     showBasicDialog("Field empty", "You haven't filled out your email yet.", "Okay");
                 } else if(userHear.equals("")){
-                    showBasicDialog("Field empty", "You haven't filled out your email yet.", "Okay");
-                }
+                    showBasicDialog("Field empty", "You haven't filled out how you heard about Camp Joseph.", "Okay");
+                } else if (userCareer.equals("")){
+                    showBasicDialog("Field empty", "You haven't filled out what you do for a living.", "Okay");
+                } else if (userFirst.equals("")){
+                    showBasicDialog("Field empty", "You haven't filled out if this is your first time.", "Okay");
+                } else if (userGender.equals("")){
+                    showBasicDialog("Field empty", "You haven't filled out your gender yet. Hope all is well?", "Okay");
+                } else {
 
-                connectApi(BASE_URL, fullName, userPhone, userEmail, userHear, userCareer, userFirst, userGender);
+                    connectApi(BASE_URL, fullName, userPhone, userEmail, userHear, userCareer, userFirst, userGender);
+                }
             }
         });
 
@@ -240,6 +247,7 @@ public class RegisterForm extends AppCompatActivity {
             @Override
             public void onResponse(Call<NewUser> call, Response<NewUser> response) {
                 if (response.isSuccessful()){
+                    Log.e("X", response.toString());
                     lunchActivity();
                 }
             }
