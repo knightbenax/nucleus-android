@@ -84,7 +84,7 @@
                         android:id="@+id/nameWrapper"
                         android:layout_width="match_parent"
                         android:layout_marginBottom="12dp"
-                        android:textColorHint="@color/black"
+                        android:textColorHint="@color/gray"
                         android:orientation="vertical"
                         android:layout_height="wrap_content"
                         >
@@ -94,6 +94,7 @@
                             android:layout_marginBottom="3dp"
                             android:layout_marginLeft="4dp"
                             android:textColor="@color/white"
+                            android:textSize="16sp"
                             android:text="@string/full_name"
                             android:layout_height="wrap_content" />
 
@@ -104,7 +105,7 @@
                             android:paddingBottom="15dp"
                             android:nextFocusDown="@id/gender"
                             android:hint="@string/full_name_hint"
-                            android:textColorHint="@color/black"
+                            android:textColorHint="@color/gray"
                             android:inputType="text|textCapSentences"
                             android:backgroundTint="@color/black"
                             android:id="@+id/fullname"
@@ -126,6 +127,7 @@
                             android:layout_marginBottom="3dp"
                             android:layout_marginLeft="4dp"
                             android:textColor="@color/white"
+                            android:textSize="16sp"
                             android:text="@string/gender"
                             android:layout_height="wrap_content" />
 
@@ -135,7 +137,7 @@
                             android:textColor="@color/black"
                             android:paddingBottom="15dp"
                             android:hint="@string/male_of_female_obviously"
-                            android:textColorHint="@color/black"
+                            android:textColorHint="@color/gray"
                             android:inputType="text|textCapSentences"
                             android:nextFocusDown="@id/phone"
                             android:backgroundTint="@color/black"
@@ -158,6 +160,7 @@
                             android:layout_width="match_parent"
                             android:layout_marginBottom="3dp"
                             android:layout_marginLeft="4dp"
+                            android:textSize="16sp"
                             android:textColor="@color/white"
                             android:text="@string/phone_number"
                             android:layout_height="wrap_content" />
@@ -168,7 +171,7 @@
                             android:textColor="@color/black"
                             android:paddingBottom="15dp"
                             android:hint="That thing you call and it rings"
-                            android:textColorHint="@color/black"
+                            android:textColorHint="@color/gray"
                             android:inputType="text|textCapSentences"
                             android:nextFocusDown="@id/email"
                             android:backgroundTint="@color/black"
@@ -191,6 +194,7 @@
                             android:layout_marginBottom="3dp"
                             android:layout_marginLeft="4dp"
                             android:textColor="@color/white"
+                            android:textSize="16sp"
                             android:text="@string/email_address"
                             android:layout_height="wrap_content" />
 
@@ -200,7 +204,7 @@
                             android:textColor="@color/black"
                             android:paddingBottom="15dp"
                             android:hint="@string/where_we_are_sending_your_iv_no_spams"
-                            android:textColorHint="@color/black"
+                            android:textColorHint="@color/gray"
                             android:nextFocusDown="@id/hear"
                             android:inputType="textEmailAddress"
                             android:backgroundTint="@color/black"
@@ -221,6 +225,7 @@
                             android:layout_width="match_parent"
                             android:layout_marginBottom="3dp"
                             android:layout_marginLeft="4dp"
+                            android:textSize="16sp"
                             android:textColor="@color/white"
                             android:text="@string/hear_from"
                             android:layout_height="wrap_content" />
@@ -231,7 +236,7 @@
                             android:textColor="@color/black"
                             android:paddingBottom="15dp"
                             android:hint="@string/tell_us_we_love_a_good_gist"
-                            android:textColorHint="@color/black"
+                            android:textColorHint="@color/gray"
                             android:inputType="text|textCapSentences"
                             android:nextFocusDown="@id/career"
                             android:backgroundTint="@color/black"
@@ -253,6 +258,7 @@
                             android:layout_width="match_parent"
                             android:layout_marginBottom="3dp"
                             android:layout_marginLeft="4dp"
+                            android:textSize="16sp"
                             android:textColor="@color/white"
                             android:text="@string/career"
                             android:layout_height="wrap_content" />
@@ -263,7 +269,7 @@
                             android:textColor="@color/black"
                             android:paddingBottom="15dp"
                             android:hint="@string/student_graduate_engineer_batman"
-                            android:textColorHint="@color/black"
+                            android:textColorHint="@color/gray"
 
                             android:inputType="text|textCapSentences"
                             android:backgroundTint="@color/black"
@@ -286,6 +292,7 @@
                             android:layout_width="match_parent"
                             android:layout_marginBottom="3dp"
                             android:layout_marginLeft="4dp"
+                            android:textSize="16sp"
                             android:textColor="@color/white"
                             android:text="@string/first_time"
                             android:layout_height="wrap_content" />
@@ -296,7 +303,7 @@
                             android:textColor="@color/black"
                             android:paddingBottom="15dp"
                             android:hint="@string/always_a_first_time_for_everything"
-                            android:textColorHint="@color/black"
+                            android:textColorHint="@color/gray"
                             android:inputType="text|textCapSentences"
                             android:backgroundTint="@color/black"
                             android:id="@+id/first"

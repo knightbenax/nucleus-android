@@ -346,15 +346,32 @@ public class RegisterForm extends AppCompatActivity {
             public void onResponse(Call<NewUser> call, Response<NewUser> response) {
                 if (response.isSuccessful()){
 
-                    Log.e("X", response.body().getReason());
-                    String fullname = response.body().getParticipant().getFullname();
-                    String phone = response.body().getParticipant().getPhone();
-                    String email = response.body().getParticipant().getEmail();
-                    String hear = response.body().getParticipant().getHearAboutCamp();
-                    String career = response.body().getParticipant().getCareer();
-                    String first = response.body().getParticipant().getFirstTimeAtCamp();
-                    String gender = response.body().getParticipant().getGender();
-                    lunchActivity(fullname,phone,email,hear,career,first,gender);
+                    // we are checking for case where someone has already registered.
+                    // We won't allow the same registration happen again
+                    if (response.body().getStatus()){
+
+                        //Log.e("X", response.body().getStatus().toString());
+                        String fullname = response.body().getParticipant().getFullname();
+                        String phone = response.body().getParticipant().getPhone();
+                        String email = response.body().getParticipant().getEmail();
+                        String hear = response.body().getParticipant().getHearAboutCamp();
+                        String career = response.body().getParticipant().getCareer();
+                        String first = response.body().getParticipant().getFirstTimeAtCamp();
+                        String gender = response.body().getParticipant().getGender();
+                        lunchActivity(fullname,phone,email,hear,career,first,gender);
+
+                    } else {
+
+                        //email with this registration exists
+                        if (response.body().getReason().equals("exists")){
+
+                            showBasicDialog("Account exists", "This email has already been registered for this event. Sign in with this email or use another email.", "Okay");
+                            binding.content.setVisibility(View.VISIBLE);
+                            binding.loader.setVisibility(View.GONE);
+                        }
+
+
+                    }
 
                 }
             }
