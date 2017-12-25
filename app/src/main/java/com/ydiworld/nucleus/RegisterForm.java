@@ -247,6 +247,7 @@ public class RegisterForm extends AppCompatActivity {
             @Override
             public void onResponse(Call<NewUser> call, Response<NewUser> response) {
                 if (response.isSuccessful()){
+
                     String fullname = response.body().getParticipant().getFullname();
                     String phone = response.body().getParticipant().getPhone();
                     String email = response.body().getParticipant().getEmail();
@@ -255,6 +256,7 @@ public class RegisterForm extends AppCompatActivity {
                     String first = response.body().getParticipant().getFirstTimeAtCamp();
                     String gender = response.body().getParticipant().getGender();
                     lunchActivity(fullname,phone,email,hear,career,first,gender);
+
                 }
             }
 
