@@ -171,16 +171,16 @@ public class SignInForm extends AppCompatActivity {
         }
 
         NucleusInterface nucleusInterface = retrofit.create(NucleusInterface.class);
-        nucleusInterface.siginInUser(userEmail).enqueue(new Callback<NewUser>() {
+        nucleusInterface.siginInUser(userEmail).enqueue(new Callback<ExistingUser>() {
             @Override
-            public void onResponse(Call<NewUser> call, Response<NewUser> response) {
+            public void onResponse(Call<ExistingUser> call, Response<ExistingUser> response) {
                 if (response.isSuccessful()){
                     lunchActivity();
                 }
             }
 
             @Override
-            public void onFailure(Call<NewUser> call, Throwable t) {
+            public void onFailure(Call<ExistingUser> call, Throwable t) {
 
             }
         });

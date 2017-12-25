@@ -4,11 +4,12 @@ package com.ydiworld.nucleus;
  * Created by sammy on 12/24/17.
  */
 
-import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class NewUser {
+import java.util.List;
+
+public class ExistingUser {
 
     @SerializedName("success")
     @Expose
@@ -18,13 +19,9 @@ public class NewUser {
     @Expose
     private String reason;
 
-    @SerializedName("tribe")
+    @SerializedName("participant")
     @Expose
-    private String tribe;
-
-    @SerializedName("last_insert_id")
-    @Expose
-    private String last_insert_id;
+    private Participant participant;
 
     @SerializedName("events")
     @Expose
@@ -41,20 +38,20 @@ public class NewUser {
         return reason;
     }
 
-    public String getTribe() {
-        return tribe;
-    }
-
-    public String getID() {
-        return last_insert_id;
-    }
-
     public void setSuccess(Boolean success) {
         this.success = success;
     }
 
     public void setReason(String reason) {
         this.reason = reason;
+    }
+
+    public Participant getParticipant() {
+        return participant;
+    }
+
+    public void setParticipant(Participant participant) {
+        this.participant = participant;
     }
 
     public List<Event> getEvents() {

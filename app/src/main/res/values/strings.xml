@@ -4,6 +4,7 @@
     <string name="sub_header">The Official App of YDI\'s Camp Joseph</string>
     <string name="register">Register</string>
     <string name="signin">Registered? Sign In</string>
+    <string name="preferencesKey">com.ydiworld.nucleus</string>
     <string name="venue">Venue:</string>
     <string name="theplace">Faith Academy,\nCanaanland, Ota</string>
     <string name="uber">Uber</string>
@@ -18,6 +19,8 @@
     <string name="back_btn"></string>
     <string name="male_of_female_obviously">Male of Female. Obviously</string>
     <string name="gender">Gender</string>
+    <string name="tribe">Tribe</string>
+    <string name="last_id">ID</string>
     <string name="where_we_are_sending_your_iv_no_spams">Where we are sending your IV. No spams</string>
     <string name="tell_us_we_love_a_good_gist">Tell us. We love a good gist</string>
     <string name="student_graduate_engineer_batman">Student? Graduate? Engineer? Batman?</string>
