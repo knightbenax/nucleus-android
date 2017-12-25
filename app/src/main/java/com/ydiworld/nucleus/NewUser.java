@@ -12,7 +12,12 @@ public class NewUser {
 
     @SerializedName("success")
     @Expose
-    private Boolean success;
+    private Boolean status;
+
+    @SerializedName("reason")
+    @Expose
+    private String reason;
+
     @SerializedName("participant")
     @Expose
     private Participant participant;
@@ -23,12 +28,20 @@ public class NewUser {
     @Expose
     private List<Official> officials = null;
 
-    public Boolean getSuccess() {
-        return success;
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public String getReason() {
+        return reason;
     }
 
     public void setSuccess(Boolean success) {
-        this.success = success;
+        this.status = success;
+    }
+
+    public void setReason(String reason) {
+        this.reason = reason;
     }
 
     public Participant getParticipant() {
