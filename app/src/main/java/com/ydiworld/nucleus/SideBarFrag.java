@@ -40,7 +40,6 @@ public class SideBarFrag extends Fragment{
             @Override
             public void onClick(View v) {
                 goActivity();
-                Log.e("Hey", "Clicked me");
             }
         });
 
