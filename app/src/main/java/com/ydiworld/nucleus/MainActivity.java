@@ -11,12 +11,16 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
+
+import java.util.HashMap;
+import java.util.List;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
@@ -30,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
     Fragment personFrag = new PersonFrag();
     Fragment eventFrag = new EventFrag();
     String fromActivity;
+    SharedPreferences sharedPreferences;
+    Bundle bundle;
 
 
     @Override
@@ -38,14 +44,9 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_parent);
 
-        fragmentTransaction = getFragmentManager().beginTransaction();
-
-        fromActivity = getIntent().getClass().getSimpleName();
-
+        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+        fragmentTransaction.add(R.id.mainArea, personFrag).commit();
         setThingsUp();
-
-        changeScreens(fromActivity);
-
     }
 
     private void changeScreens(String screen){
@@ -53,12 +54,15 @@ public class MainActivity extends AppCompatActivity {
         switch (screen){
             case "SignInForm":
             {
+
+                fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.mainArea, personFrag);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             }
             case "RegisterForm":
             {
+                fragmentTransaction = getFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.mainArea, eventFrag);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();

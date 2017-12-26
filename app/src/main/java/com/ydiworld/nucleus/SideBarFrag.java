@@ -1,8 +1,10 @@
 package com.ydiworld.nucleus;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +36,21 @@ public class SideBarFrag extends Fragment{
         locationImg.setImageResource(R.drawable.placeholder);
         calendarImg.setImageResource(R.drawable.calendar);*/
 
+        calendarImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goActivity();
+                Log.e("Hey", "Clicked me");
+            }
+        });
+
         return view;
+    }
+
+    private void goActivity(){
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+            Intent intent = new Intent(getContext(), MainActivity.class);
+            startActivity(intent);
+        }
     }
 }
