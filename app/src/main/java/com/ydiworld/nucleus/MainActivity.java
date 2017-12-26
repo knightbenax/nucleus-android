@@ -44,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_parent);
 
-        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-        fragmentTransaction.add(R.id.mainArea, personFrag).commit();
+        fragmentTransaction = getFragmentManager().beginTransaction();
+        fragmentTransaction.add(R.id.mainArea, personFrag);
         setThingsUp();
     }
 
@@ -75,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
         setWinFlags();
 
         ImageView location = findViewById(R.id.location);
+        ImageView calendar = findViewById(R.id.calendar);
 
         location.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,12 +85,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        calendar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.e("HY", "Clicked");
+                fragmentTransaction.replace(R.id.mainArea, eventFrag);
+                fragmentTransaction.addToBackStack(null);
+//                fragmentTransaction.commit();
+            }
+        });
+
         ImageView imageView = findViewById(R.id.back_bg);
 
         SharedPreferences sharedPref = getSharedPreferences(getString(R.string.preferencesKey), Context.MODE_PRIVATE);
         String Uri = sharedPref.getString(getString(R.string.avatar), "");
 
         Picasso.with(this).load(Uri).into(imageView);
+        Log.e("Any","outside");
+        fragmentTransaction.commit();
     }
 
     @Override

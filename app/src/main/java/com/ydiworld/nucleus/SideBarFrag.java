@@ -36,20 +36,7 @@ public class SideBarFrag extends Fragment{
         locationImg.setImageResource(R.drawable.placeholder);
         calendarImg.setImageResource(R.drawable.calendar);*/
 
-        calendarImg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goActivity();
-            }
-        });
 
         return view;
-    }
-
-    private void goActivity(){
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
-            Intent intent = new Intent(getContext(), MainActivity.class);
-            startActivity(intent);
-        }
     }
 }
