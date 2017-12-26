@@ -29,4 +29,16 @@ public interface NucleusInterface {
     Call<ExistingUser> siginInUser(
             @Field("email") String email
     );
+
+
+    @POST("/api/register/details")
+    Call<UpdatedEventData> getUpdatedData(
+
+    );
+
+    @POST("/api/register/markasarrived")
+    @FormUrlEncoded
+    Call<UpdatedEventData> markAsArrived(
+
+    );
 }

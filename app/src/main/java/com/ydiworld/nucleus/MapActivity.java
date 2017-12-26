@@ -114,6 +114,16 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
                 startActivity(intent);
             }
         });
+
+        ImageView details = findViewById(R.id.speakers);
+
+        details.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MapActivity.this, OfficialsActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
