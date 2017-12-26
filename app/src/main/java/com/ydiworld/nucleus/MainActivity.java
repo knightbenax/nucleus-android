@@ -11,12 +11,16 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
+
+import java.util.HashMap;
+import java.util.List;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
@@ -25,19 +29,23 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
  */
 
 public class MainActivity extends AppCompatActivity {
+
+    private FragmentTransaction fragmentTransaction;
+    Fragment personFrag = new PersonFrag();
+    Fragment eventFrag = new EventFrag();
+    String fromActivity;
+    SharedPreferences sharedPreferences;
+    Bundle bundle;
+
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_parent);
 
-        Fragment personFrag = new PersonFrag();
-        Fragment eventFrag = new EventFrag();
-        //Fragment sideFrag = new SideBarFrag();
-
-        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-        fragmentTransaction.add(R.id.mainArea, personFrag).commit();
-
+        fragmentTransaction = getFragmentManager().beginTransaction();
+        fragmentTransaction.add(R.id.mainArea, personFrag);
         setThingsUp();
     }
 
@@ -46,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         setWinFlags();
 
         ImageView location = findViewById(R.id.location);
+        ImageView calendar = findViewById(R.id.calendar);
 
         location.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,6 +100,8 @@ public class MainActivity extends AppCompatActivity {
         String Uri = sharedPref.getString(getString(R.string.avatar), "");
 
         Picasso.with(this).load(Uri).into(imageView);
+        Log.e("Any","outside");
+        fragmentTransaction.commit();
     }
 
     @Override
