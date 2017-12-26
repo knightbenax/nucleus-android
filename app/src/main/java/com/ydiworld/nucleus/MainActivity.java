@@ -25,26 +25,46 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
  */
 
 public class MainActivity extends AppCompatActivity {
+
+    private FragmentTransaction fragmentTransaction;
+    Fragment personFrag = new PersonFrag();
+    Fragment eventFrag = new EventFrag();
+    String fromActivity;
+
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_parent);
 
-        Fragment personFrag = new PersonFrag();
-        Fragment eventFrag = new EventFrag();
-        //Fragment sideFrag = new SideBarFrag();
+        fragmentTransaction = getFragmentManager().beginTransaction();
 
-        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-        fragmentTransaction.add(R.id.mainArea, personFrag).commit();
+        fromActivity = getIntent().getClass().getSimpleName();
 
         setThingsUp();
+
+        changeScreens(fromActivity);
+
     }
 
     private void changeScreens(String screen){
-        if(screen == "person"){
-            
+
+        switch (screen){
+            case "SignInForm":
+            {
+                fragmentTransaction.replace(R.id.mainArea, personFrag);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+            case "RegisterForm":
+            {
+                fragmentTransaction.replace(R.id.mainArea, eventFrag);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
         }
+
     }
 
     private void setThingsUp(){
