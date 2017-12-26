@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     private FragmentTransaction fragmentTransaction;
     Fragment personFrag = new PersonFrag();
     Fragment eventFrag = new EventFrag();
+    String fromActivity;
 
 
     @Override
@@ -37,28 +38,26 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_parent);
 
+        fragmentTransaction = getFragmentManager().beginTransaction();
 
-        Fragment personFrag = new PersonFrag();
-        Fragment eventFrag = new EventFrag();
-        //Fragment sideFrag = new SideBarFrag();
-
-        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-        fragmentTransaction.add(R.id.mainArea, personFrag).commit();
+        fromActivity = getIntent().getClass().getSimpleName();
 
         setThingsUp();
+
+        changeScreens(fromActivity);
 
     }
 
     private void changeScreens(String screen){
 
         switch (screen){
-            case "person":
+            case "SignInForm":
             {
                 fragmentTransaction.replace(R.id.mainArea, personFrag);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             }
-            case "event":
+            case "RegisterForm":
             {
                 fragmentTransaction.replace(R.id.mainArea, eventFrag);
                 fragmentTransaction.addToBackStack(null);
