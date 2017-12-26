@@ -1,0 +1,157 @@
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:wheel="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+
+        <com.cesards.cropimageview.CropImageView
+            android:layout_width="match_parent"
+            custom:crop="centerBottom"
+            android:src="@drawable/bg"
+            android:layout_height="match_parent" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:id="@+id/mainPanel"
+            android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:paddingTop="20dp"
+                android:paddingBottom="30dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/back_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:minHeight="0dp"
+                    android:layout_marginRight="15dp"
+                    android:minWidth="0dp"
+                    android:textColor="@color/white"
+                    android:text="@string/back_btn"
+                    fontPath="fonts/Cabin/fontawesome-webfont.ttf"
+                    tools:ignore="MissingPrefix"
+                    android:textAllCaps="false"
+                    android:textSize="24sp"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:text="@string/sign_in"
+                    android:textSize="22sp"
+                    fontPath="fonts/Cabin/Cabin-Bold-TTF.ttf"
+                    tools:ignore="MissingPrefix"
+                    android:textColor="@color/white"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:scrollbars="none"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    >
+
+
+                    <LinearLayout
+                        android:id="@+id/emailWrapper"
+                        android:layout_width="match_parent"
+                        android:layout_marginBottom="12dp"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_marginBottom="3dp"
+                            android:layout_marginLeft="4dp"
+                            android:textColor="@color/white"
+                            android:text="@string/email_address"
+                            android:layout_height="wrap_content" />
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:textSize="16sp"
+                            android:textColor="@color/black"
+                            android:paddingBottom="15dp"
+                            android:textColorHint="@color/black"
+                            android:nextFocusDown="@id/hear"
+                            android:inputType="textEmailAddress"
+                            android:backgroundTint="@color/black"
+                            android:id="@+id/email"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+
+                    <Button
+                        android:id="@+id/signInbtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sign_in"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/green_bg"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+
+            </ScrollView>
+
+        </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:id="@+id/loader"
+            android:visibility="gone"
+            android:layout_height="match_parent">
+
+            <com.pnikosis.materialishprogress.ProgressWheel
+                android:id="@+id/progress_wheel"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                wheel:matProg_barColor="#fff"
+                wheel:matProg_rimWidth="15dp"
+                wheel:matProg_progressIndeterminate="true" />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</layout>
+
+
+

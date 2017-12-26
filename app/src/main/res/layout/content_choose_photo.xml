@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context="com.ydiworld.nucleus.ChoosePhotoActivity"
+        tools:showIn="@layout/activity_choose_photo">
+
+
+        <com.cesards.cropimageview.CropImageView
+            android:layout_width="match_parent"
+            custom:crop="centerBottom"
+            android:src="@drawable/bg"
+            android:layout_height="match_parent" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:layout_height="match_parent">
+
+            <TextView
+
+                android:textAlignment="center"
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/one_more_step_choose_a_photo_that_would_be_used_as_your_avatar"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+
+            <Button
+                android:id="@+id/chooseBtn"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:elevation="10dp"
+                android:onClick="showChooser"
+                android:background="@drawable/green_bg"
+                android:textColor="@color/black"
+                android:text="@string/choose_photo"
+                fontPath="fonts/Cabin/Cabin-Bold-TTF.ttf"
+                tools:ignore="MissingPrefix"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                />
+
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+</layout>
+
