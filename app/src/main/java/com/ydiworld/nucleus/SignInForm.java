@@ -1,7 +1,9 @@
 package com.ydiworld.nucleus;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.databinding.DataBindingUtil;
 import android.os.Build;
@@ -12,10 +14,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.ydiworld.nucleus.databinding.ActivitySignInFormBinding;
 
 import retrofit2.Call;
@@ -52,13 +56,30 @@ public class SignInForm extends AppCompatActivity {
         binding.signInbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String userEmail = email.getText().toString();
-                connectApi(BASE_URL, userEmail);
+                String userEmail = binding.email.getText().toString();
+
+                if (userEmail.equals("")){
+                    showBasicDialog("Field empty", "You haven't filled out your email yet.", "Okay");
+                } else {
+
+                    hideSoftKeyboard(SignInForm.this);
+                    binding.content.setVisibility(View.GONE);
+                    binding.loader.setVisibility(View.VISIBLE);
+                    connectApi(BASE_URL, userEmail);
+                }
+
             }
         });
 
         setThingsUp();
 
+    }
+
+    public void hideSoftKeyboard(Activity activity) {
+        //InputMethodManager inputMethodManager = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        //inputMethodManager.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(), 0);
+        InputMethodManager imm = (InputMethodManager)this.getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(binding.email.getWindowToken(), 0);
     }
 
     private void setThingsUp(){
@@ -162,6 +183,15 @@ public class SignInForm extends AppCompatActivity {
     }
 
 
+    private void showBasicDialog(String title, String content, String agree){
+        new MaterialDialog.Builder(this)
+                .title(title)
+                .content(content)
+                .positiveText(agree)
+                .show();
+    }
+
+
     private void connectApi(String base_url, String userEmail) {
         if (retrofit == null){
             retrofit = new Retrofit.Builder()
@@ -175,13 +205,52 @@ public class SignInForm extends AppCompatActivity {
             @Override
             public void onResponse(Call<ExistingUser> call, Response<ExistingUser> response) {
                 if (response.isSuccessful()){
-                    lunchActivity();
+
+
+                    if (response.body().getStatus()){
+                        //lunchActivity();
+                        String fullname = response.body().getParticipant().getFullname();
+                        String phone = response.body().getParticipant().getPhone();
+                        String email = response.body().getParticipant().getEmail();
+                        String hear = response.body().getParticipant().getHearAboutCamp();
+                        String career = response.body().getParticipant().getCareer();
+                        String first = response.body().getParticipant().getFirstTimeAtCamp();
+                        String gender = response.body().getParticipant().getGender();
+                        String tribe = response.body().getParticipant().getTribe();
+                        String parti_id = response.body().getParticipant().getID().toString();
+
+                        SharedPreferences sharedPref = getSharedPreferences(getString(R.string.preferencesKey), Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPref.edit();
+
+                        editor.putString(getString(R.string.full_name), fullname).commit();
+                        editor.putString(getString(R.string.phone_number), phone).commit();
+                        editor.putString(getString(R.string.email_address), email).commit();
+                        editor.putString(getString(R.string.hear_from), hear).commit();
+                        editor.putString(getString(R.string.career), career).commit();
+                        editor.putString(getString(R.string.first_time), first).commit();
+                        editor.putString(getString(R.string.gender), gender).commit();
+                        editor.putString(getString(R.string.tribe), tribe).commit();
+                        editor.putString(getString(R.string.last_id), parti_id).commit();
+
+                        Intent intent = new Intent(SignInForm.this, ChoosePhotoActivity.class);
+                        startActivity(intent);
+                        finish();
+
+                    } else {
+
+                        if (response.body().getReason().equals("no exist")){
+                            binding.content.setVisibility(View.VISIBLE);
+                            binding.loader.setVisibility(View.GONE);
+                            showBasicDialog("Account not found", "No registration data was found with this email.", "Okay");
+                        }
+
+                    }
                 }
             }
 
             @Override
             public void onFailure(Call<ExistingUser> call, Throwable t) {
-
+                showBasicDialog("Error", "Sorry, an error occured. Please try again", "Okay");
             }
         });
     }

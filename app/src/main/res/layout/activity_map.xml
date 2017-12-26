@@ -9,159 +9,194 @@
     tools:context=".MapActivity">
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:paddingLeft="8dp"
-            android:paddingStart="8dp"
-            android:paddingRight="8dp"
-            android:paddingEnd="8dp"
-            android:layout_marginTop="32dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <android.support.constraint.ConstraintLayout
-
-                android:paddingRight="6dp"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                >
-
-                <ImageView
-                    android:id="@+id/person"
-                    android:layout_width="58dp"
-                    android:layout_height="58dp"
-                    android:layout_marginLeft="6dp"
-                    android:layout_marginRight="6dp"
-                    android:layout_marginBottom="5dp"
-                    android:src="@drawable/user_icon"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-
-                    android:scaleType="centerInside"
-                    android:scaleX="1"
-                    android:scaleY="1"
-                    android:adjustViewBounds="true"/>
-
-                <ImageView
-                    android:id="@+id/location"
-                    android:layout_width="58dp"
-                    android:layout_height="58dp"
-                    android:layout_marginLeft="6dp"
-                    android:layout_marginRight="6dp"
-                    android:layout_marginBottom="5dp"
-                    android:src="@drawable/location_empty"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/person"
-
-                    android:scaleType="centerInside"
-                    android:scaleX="1"
-                    android:scaleY="1"
-                    android:adjustViewBounds="true"/>
-
-                <ImageView
-                    android:id="@+id/calendar"
-                    android:layout_width="58dp"
-                    android:layout_height="58dp"
-                    android:layout_marginLeft="6dp"
-                    android:layout_marginRight="6dp"
-                    android:layout_marginBottom="5dp"
-                    android:src="@drawable/prog_empty"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/location"
-
-                    android:scaleType="centerInside"
-                    android:scaleX="1"
-                    android:scaleY="1"
-                    android:adjustViewBounds="true"/>
-
-                <ImageView
-                    android:id="@+id/speakers"
-                    android:layout_width="58dp"
-                    android:layout_height="58dp"
-                    android:layout_marginLeft="6dp"
-                    android:layout_marginRight="6dp"
-                    android:layout_marginBottom="5dp"
-                    android:src="@drawable/speakers_empty"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/calendar"
-
-                    android:scaleType="centerInside"
-                    android:scaleX="1"
-                    android:scaleY="1"
-                    android:adjustViewBounds="true"/>
-
-                <ImageView
-                    android:id="@+id/details"
-                    android:layout_width="58dp"
-                    android:layout_height="58dp"
-                    android:layout_marginLeft="6dp"
-                    android:layout_marginRight="6dp"
-                    android:layout_marginBottom="5dp"
-                    android:src="@drawable/details_empty"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/speakers"
-
-                    android:scaleType="centerInside"
-                    android:scaleX="1"
-                    android:scaleY="1"
-                    android:adjustViewBounds="true"/>
-            </android.support.constraint.ConstraintLayout>
-        </LinearLayout>
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:baselineAligned="true"
             android:orientation="vertical"
-            android:paddingLeft="8dp"
-            android:paddingStart="8dp"
-            android:paddingRight="16dp"
-            android:paddingEnd="16dp"
-            android:layout_marginTop="50dp">
+            android:paddingTop="30dp"
+            >
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/venue"
-                android:textSize="30sp"
-                android:textStyle="bold"/>
-            <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/theplace"
-                android:textSize="30sp"
-                android:textStyle="bold"/>
+                android:textSize="16sp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/white_text_bg"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:textColor="@color/black"
+                android:text="@string/venue"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <android.support.constraint.ConstraintLayout
+                    android:paddingRight="6dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    >
+
+                    <ImageView
+                        android:id="@+id/person"
+                        android:layout_width="58dp"
+                        android:layout_height="58dp"
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/user_icon_empty"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+
+                        android:scaleType="centerInside"
+                        android:scaleX="1"
+                        android:scaleY="1"
+                        android:adjustViewBounds="true"/>
+
+                    <ImageView
+                        android:id="@+id/location"
+                        android:layout_width="58dp"
+                        android:layout_height="58dp"
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/location"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/person"
+
+                        android:scaleType="centerInside"
+                        android:scaleX="1"
+                        android:scaleY="1"
+                        android:adjustViewBounds="true"/>
+
+                    <ImageView
+                        android:id="@+id/calendar"
+                        android:layout_width="58dp"
+                        android:layout_height="58dp"
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/prog_empty"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/location"
+
+                        android:scaleType="centerInside"
+                        android:scaleX="1"
+                        android:scaleY="1"
+                        android:adjustViewBounds="true"/>
+
+                    <ImageView
+                        android:id="@+id/speakers"
+                        android:layout_width="58dp"
+                        android:layout_height="58dp"
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/speakers_empty"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/calendar"
+
+                        android:scaleType="centerInside"
+                        android:scaleX="1"
+                        android:scaleY="1"
+                        android:adjustViewBounds="true"/>
+
+                    <ImageView
+                        android:id="@+id/details"
+                        android:layout_width="58dp"
+                        android:layout_height="58dp"
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/details_empty"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/speakers"
+
+                        android:scaleType="centerInside"
+                        android:scaleX="1"
+                        android:scaleY="1"
+                        android:adjustViewBounds="true"/>
+                </android.support.constraint.ConstraintLayout>
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="20dp">
+                android:orientation="vertical"
+                android:paddingLeft="8dp"
+                android:paddingStart="8dp"
+                android:paddingRight="16dp"
+                android:paddingEnd="16dp">
 
-                <Button
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/venue"
+                    android:visibility="gone"
+                    android:textSize="30sp"
+                    android:textStyle="bold"/>
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/uber"
-                    android:textColor="@color/black"
-                    android:background="@drawable/white_bg"
-                    android:layout_marginRight="20dp"
-                    android:minHeight="42dp"/>
-                <Button
-                    android:layout_width="wrap_content"
+                    android:text="@string/theplace"
+                    fontPath="fonts/Cabin/Cabin-Bold-TTF.ttf"
+                    tools:ignore="MissingPrefix"
+                    android:textSize="30sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/direction"
-                    android:textColor="@color/black"
-                    android:background="@drawable/white_bg"
-                    android:minHeight="42dp"/>
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp">
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/uber"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:onClick="callUber"
+                        android:elevation="10dp"
+                        android:background="@drawable/white_bg"
+                        android:layout_marginRight="20dp"
+                        android:minHeight="42dp"/>
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textSize="16sp"
+                        android:text="@string/direction"
+                        android:onClick="showMaps"
+                        android:textColor="@color/black"
+                        android:background="@drawable/white_bg"
+                        android:minHeight="42dp"/>
+
+                </LinearLayout>
 
             </LinearLayout>
-
         </LinearLayout>
+
     </LinearLayout>
 
 
