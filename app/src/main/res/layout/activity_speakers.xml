@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/gradient_bg"
+        android:orientation="vertical"
+        android:paddingTop="30dp"
+        android:paddingBottom="30dp"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/white_text_bg"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:textColor="@color/black"
+            android:text="@string/speakers"
+            android:layout_height="wrap_content" />
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:orientation="horizontal"
+           android:layout_height="wrap_content">
+
+
+           <android.support.constraint.ConstraintLayout
+               android:paddingRight="6dp"
+               android:layout_width="wrap_content"
+               android:layout_height="match_parent"
+               >
+
+               <ImageView
+                   android:id="@+id/person"
+                   android:layout_width="58dp"
+                   android:layout_height="58dp"
+                   android:layout_marginLeft="6dp"
+                   android:layout_marginRight="6dp"
+                   android:layout_marginTop="10dp"
+                   android:src="@drawable/user_icon_empty"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toTopOf="parent"
+                   android:scaleType="centerInside"
+                   android:scaleX="1"
+                   android:scaleY="1"
+                   android:adjustViewBounds="true"/>
+
+               <ImageView
+                   android:id="@+id/location"
+                   android:layout_width="58dp"
+                   android:layout_height="58dp"
+                   android:layout_marginLeft="6dp"
+                   android:layout_marginRight="6dp"
+                   android:layout_marginTop="10dp"
+                   android:src="@drawable/location_empty"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@+id/person"
+
+                   android:scaleType="centerInside"
+                   android:scaleX="1"
+                   android:scaleY="1"
+                   android:adjustViewBounds="true"/>
+
+               <ImageView
+                   android:id="@+id/calendar"
+                   android:layout_width="58dp"
+                   android:layout_height="58dp"
+                   android:layout_marginLeft="6dp"
+                   android:layout_marginRight="6dp"
+                   android:layout_marginTop="10dp"
+                   android:src="@drawable/prog_empty"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@+id/location"
+
+                   android:scaleType="centerInside"
+                   android:scaleX="1"
+                   android:scaleY="1"
+                   android:adjustViewBounds="true"/>
+
+               <ImageView
+                   android:id="@+id/speakers"
+                   android:layout_width="58dp"
+                   android:layout_height="58dp"
+                   android:layout_marginLeft="6dp"
+                   android:layout_marginRight="6dp"
+                   android:layout_marginTop="10dp"
+                   android:src="@drawable/speakers"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@+id/calendar"
+
+                   android:scaleType="centerInside"
+                   android:scaleX="1"
+                   android:scaleY="1"
+                   android:adjustViewBounds="true"/>
+
+               <ImageView
+                   android:id="@+id/details"
+                   android:layout_width="58dp"
+                   android:layout_height="58dp"
+                   android:layout_marginLeft="6dp"
+                   android:layout_marginRight="6dp"
+                   android:layout_marginTop="10dp"
+                   android:src="@drawable/details_empty"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@+id/speakers"
+
+                   android:scaleType="centerInside"
+                   android:scaleX="1"
+                   android:scaleY="1"
+                   android:adjustViewBounds="true"/>
+           </android.support.constraint.ConstraintLayout>
+
+           <LinearLayout
+
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               tools:context="com.ydiworld.nucleus.SpeakersActivity">
+
+               <ScrollView
+                   android:layout_width="match_parent"
+                   android:layout_marginTop="10dp"
+
+                   android:scrollbars="none"
+                   android:layout_height="wrap_content">
+
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:orientation="vertical"
+                       android:paddingRight="10dp"
+                       android:layout_marginLeft="16dp"
+                       android:layout_marginBottom="40dp"
+                       android:layout_height="wrap_content">
+
+                       <ImageView
+                           android:layout_width="90dp"
+                           android:scaleType="centerCrop"
+                           android:src="@drawable/sam"
+                           android:adjustViewBounds="true"
+                           android:layout_height="90dp" />
+
+                       <TextView
+                           android:layout_width="match_parent"
+                           android:layout_marginTop="10dp"
+                           android:textColor="@color/white"
+                           android:lineSpacingExtra="3dp"
+                           android:textSize="16sp"
+                           android:text="Sam Oyemade - Financial Expert And Gospel Minister\n\nSam Oyemade is a Chartered Accountant of about two (2) decades and Chartered Tax Practioner with many years professional experience as an external auditor,Tax and Business Management Consultant to many reputable Organisations &amp; Institutions.\n
+He is the President Bearer of Light Missions World Outreach and MP Sam Oyemade &amp; Co (FCS) "
+                           android:layout_height="wrap_content" />
+
+
+                       <ImageView
+                           android:layout_marginTop="40dp"
+                           android:layout_width="90dp"
+                           android:scaleType="centerCrop"
+                           android:src="@drawable/joe"
+                           android:adjustViewBounds="true"
+                           android:layout_height="90dp" />
+
+                       <TextView
+                           android:layout_width="match_parent"
+                           android:layout_marginTop="10dp"
+                           android:textColor="@color/white"
+                           android:lineSpacingExtra="3dp"
+                           android:textSize="16sp"
+                           android:text="Joe Jesimiel Ogbe - Pastor And Youth Mentor\n\n
+Joe Jesimiel Ogbe is a prolific author, Youth Minister, Educationist, and Senior Pastor at Greathouse Mandate Church, Lagos, Nigeria.\n\n
+He is the Founder/ President of Young Disciples International (YDI), a non-denominational and non-governmental Christian youth Ministry committed to raising godly successor leaders."
+                           android:layout_height="wrap_content" />
+
+
+                       <ImageView
+                           android:layout_marginTop="40dp"
+                           android:layout_width="90dp"
+                           android:scaleType="centerCrop"
+                           android:src="@drawable/hettie"
+                           android:adjustViewBounds="true"
+                           android:layout_height="90dp" />
+
+                       <TextView
+                           android:layout_width="match_parent"
+                           android:layout_marginTop="10dp"
+                           android:lineSpacingExtra="3dp"
+                           android:textColor="@color/white"
+                           android:textSize="16sp"
+                           android:text="Henrietta Nwanefulu Ogbe - Gospel Artiste/Minister\n\n
+Henrietta Nwanefulu Ogbe is an accomplished gospel artiste, prophetess, astute administrator and minister of the gospel of our Lord Jesus Christ.\n\n
+She is the better-half of the founder of Young Disciples International; Pastor Joe Jesimiel-Ogbe, and co-host of the Camp Joseph annual youth retreat. "
+                           android:layout_height="wrap_content" />
+
+
+                       <ImageView
+                           android:layout_marginTop="40dp"
+                           android:layout_width="90dp"
+                           android:scaleType="centerCrop"
+                           android:src="@drawable/temi"
+                           android:adjustViewBounds="true"
+                           android:layout_height="90dp" />
+
+                       <TextView
+                           android:layout_width="match_parent"
+                           android:layout_marginTop="10dp"
+                           android:textColor="@color/white"
+                           android:lineSpacingExtra="3dp"
+                           android:textSize="16sp"
+                           android:text="Temitayo Bukoye - Chartered Arbitrator and Chartered Secretary and Administrator\n\n
+Temitayo Bukoye was one of the 8 young Nigerians to have come out of the Nigerian Law School with a First-Class degree in 2015. \n\nShe graduated top of her class from the Class of 2014 at the Babcock University School of Law and Security Studies, having qualified as a Chartered Arbitrator and Chartered Secretary and Administrator with distinctions. \n\nTayo has since been attached to the corporate commercial department of the law firm of G. Elias &amp; Co, one of the top tier law firms in Nigeria and has been recognized for several awards for her academic prowess and service to humanity. She likes to read, travel and listen to music in her pass time. She will be speaking Grades, Purpose and Abilities (GPA): Striking a balance for Academic Heights "
+                           android:layout_height="wrap_content" />
+
+
+                       <ImageView
+                           android:layout_marginTop="40dp"
+                           android:layout_width="90dp"
+                           android:scaleType="centerCrop"
+                           android:src="@drawable/dayo"
+                           android:adjustViewBounds="true"
+                           android:layout_height="90dp" />
+
+                       <TextView
+                           android:layout_width="match_parent"
+                           android:layout_marginTop="10dp"
+                           android:lineSpacingExtra="3dp"
+                           android:textColor="@color/white"
+                           android:textSize="16sp"
+                           android:text="Adedayo Nigeria - COMMUNITY DEVELOPENT ADVOCATE AND LEADERSHIP COACH\n\n
+Adedayo holds a Bachelor of Arts in English Literature from Obafemi Awolowo University and he has authored 3 books on leadership development and written numerous unpublished poems. \n\nHe was recognized as one of the 1,000 outstanding young leaders committed to impacting the continent from Sub-Saharan Africa and was selected to participate in Mandela Washington Fellowship for Young African Leaders Initiative started off by the former US President, Barack Obama.Adedayo trained as a civic leader at the Staley School of Leadership Studies, Kansas State University and runs a Leadership Clinic in 4 Nigerian States among many other leadership sessions he facilitates across the country."
+                           android:layout_height="wrap_content" />
+
+
+                       <ImageView
+                           android:layout_marginTop="40dp"
+                           android:layout_width="90dp"
+                           android:scaleType="centerCrop"
+                           android:src="@drawable/suwa"
+                           android:adjustViewBounds="true"
+                           android:layout_height="90dp" />
+
+                       <TextView
+                           android:layout_width="match_parent"
+                           android:layout_marginTop="10dp"
+                           android:textColor="@color/white"
+                           android:lineSpacingExtra="3dp"
+                           android:textSize="16sp"
+                           android:text="Kunbi - ED of SESEWA\n\n
+Kunbi is the executive director of SESEWA; a company she founded while still in university in 2009. She holds an LLB from Obafemi Awolowo University and was enrolled as a solicitor and advocate of the Supreme Court of Nigeria in 2010. \n\nHer company, SESEWA is at the forefront of providing internship and career opportunities for Nigeria's young generation and she is building a legacy for internship businesses in Nigeria. Adekunbi is a frequent speaker at youth events, and a big inspiration for young people in Africa. Upon completion of the Mandela Washington Fellowship, she hopes to expand SESEWA programs across several states in Nigeria and beyond to neighboring cities in Africa"
+                           android:layout_height="wrap_content" />
+
+
+                   </LinearLayout>
+
+               </ScrollView>
+
+           </LinearLayout>
+
+       </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

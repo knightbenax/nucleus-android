@@ -9,12 +9,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="4:00pm"
+        android:textSize="16sp"
+        android:textColor="@color/white"
         android:paddingBottom="10dp"
         android:id="@+id/time"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/white"
         android:text="Arrival &amp; Red Carpet"
         android:paddingBottom="10dp"
         android:id="@+id/the_event"/>

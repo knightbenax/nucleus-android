@@ -6,11 +6,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.List;
+
 /**
  * Created by sammy on 11/11/17.
  */
 
 public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHolder> {
+
+    public List<Content> eventList;
+
     @Override
     public EventViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View eventView = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_event_list, parent, false);
@@ -19,13 +24,13 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
 
     @Override
     public void onBindViewHolder(EventViewHolder holder, int position) {
-//        holder.eventTime.setText("4:00pm");
-//        holder.theEvent.setText("Arrival &amp; Red Carpet");
+        holder.eventTime.setText(eventList.get(position).getTime());
+        holder.theEvent.setText(eventList.get(position).getEvent());
     }
 
     @Override
     public int getItemCount() {
-        return 20;
+        return eventList.size();
     }
 
     class EventViewHolder extends RecyclerView.ViewHolder{
@@ -35,8 +40,8 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
         EventViewHolder(View itemView) {
             super(itemView);
 
-            eventTime = (TextView) itemView.findViewById(R.id.time);
-            theEvent = (TextView) itemView.findViewById(R.id.the_event);
+            eventTime = itemView.findViewById(R.id.time);
+            theEvent = itemView.findViewById(R.id.the_event);
         }
     }
 }

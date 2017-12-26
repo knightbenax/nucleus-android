@@ -94,6 +94,26 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
                 startActivity(intent);
             }
         });
+
+        ImageView prog = findViewById(R.id.calendar);
+
+        prog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MapActivity.this, EventActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageView speakers = findViewById(R.id.speakers);
+
+        speakers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MapActivity.this, SpeakersActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

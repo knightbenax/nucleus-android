@@ -49,27 +49,6 @@ public class MainActivity extends AppCompatActivity {
         setThingsUp();
     }
 
-    private void changeScreens(String screen){
-
-        switch (screen){
-            case "SignInForm":
-            {
-
-                fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.mainArea, personFrag);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
-            }
-            case "RegisterForm":
-            {
-                fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.mainArea, eventFrag);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
-            }
-        }
-
-    }
 
     private void setThingsUp(){
         setWinFlags();
@@ -85,13 +64,33 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        calendar.setOnClickListener(new View.OnClickListener() {
+        ImageView prog = findViewById(R.id.calendar);
+
+        prog.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Log.e("HY", "Clicked");
-                fragmentTransaction.replace(R.id.mainArea, eventFrag);
-                fragmentTransaction.addToBackStack(null);
-//                fragmentTransaction.commit();
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, EventActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageView speakers = findViewById(R.id.speakers);
+
+        speakers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SpeakersActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageView details = findViewById(R.id.details);
+
+        details.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, OfficialsActivity.class);
+                startActivity(intent);
             }
         });
 

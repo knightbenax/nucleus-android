@@ -30,4 +30,7 @@
     <string name="title_activity_choose_photo">ChoosePhotoActivity</string>
     <string name="one_more_step_choose_a_photo_that_would_be_used_as_your_avatar">One more step. Choose a photo that would be used as your Avatar</string>
     <string name="choose_photo">Choose Photo</string>
+    <string name="programme">Programme</string>
+    <string name="speakers">Speakers</string>
+    <string name="camp_officials">Camp Officials</string>
 </resources>
