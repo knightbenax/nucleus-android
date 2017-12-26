@@ -1,14 +1,17 @@
 package com.ydiworld.nucleus;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.databinding.DataBindingUtil;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -40,10 +43,52 @@ public class OfficialsActivity extends AppCompatActivity {
 
         List<Official> this_officials = getArrayList("officials");
 
-        Log.e("X", String.valueOf(this_officials.size()));
-        Log.e("X", String.valueOf(this_officials.get(0)));
-        Log.e("X", String.valueOf(this_officials.get(0).getBody()));
-        //binding.contentText.setText(this_officials.get(0).getBody() + this_officials.get(1).getTitle() + this_officials.get(1).getBody() + this_officials.get(2).getTitle() + this_officials.get(2).getBody());
+        //Log.e("X", String.valueOf(this_officials.size()));
+        //Log.e("X", String.valueOf(this_officials.get(0)));
+        //Log.e("X", String.valueOf(this_officials.get(0).getBody()));
+        binding.contentText.setText(this_officials.get(0).getBody() + "\n\n" + this_officials.get(1).getTitle() + this_officials.get(1).getBody() + "\n\n" + this_officials.get(2).getTitle() + this_officials.get(2).getBody());
+
+
+
+        ImageView location = findViewById(R.id.location);
+
+        location.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(OfficialsActivity.this, MapActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageView prog = findViewById(R.id.calendar);
+
+        prog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(OfficialsActivity.this, EventActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageView speakers = findViewById(R.id.speakers);
+
+        speakers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(OfficialsActivity.this, SpeakersActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageView person = findViewById(R.id.person);
+
+        person.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(OfficialsActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -55,7 +100,7 @@ public class OfficialsActivity extends AppCompatActivity {
         List<Official> collection = new ArrayList<Official>();
         Gson gson = new Gson();
         String arrayListString = pref.getString(KEY, null);
-        Type type = new TypeToken<List<?>>() {}.getType();
+        Type type = new TypeToken<List<Official>>() {}.getType();
         collection = gson.fromJson(arrayListString, type);
 
         return collection;

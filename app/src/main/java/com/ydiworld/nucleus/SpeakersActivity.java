@@ -58,7 +58,17 @@ public class SpeakersActivity extends AppCompatActivity {
         prog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SpeakersActivity.this, MainActivity.class);
+                Intent intent = new Intent(SpeakersActivity.this, EventActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageView details = findViewById(R.id.details);
+
+        details.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SpeakersActivity.this, OfficialsActivity.class);
                 startActivity(intent);
             }
         });

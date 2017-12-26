@@ -108,6 +108,16 @@ public class EventActivity extends AppCompatActivity {
             }
         });
 
+        ImageView details = findViewById(R.id.details);
+
+        details.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(EventActivity.this, OfficialsActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         this_events = getArrayList("events");
         thisAdapter = new EventAdapter();

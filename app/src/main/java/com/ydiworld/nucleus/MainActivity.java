@@ -17,11 +17,17 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 
+import com.google.gson.Gson;
 import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 /**
@@ -36,6 +42,9 @@ public class MainActivity extends AppCompatActivity {
     String fromActivity;
     SharedPreferences sharedPreferences;
     Bundle bundle;
+
+    private final String BASE_URL = "http://campjoseph.ydiworld.org/";
+    private Retrofit retrofit = null;
 
 
     @Override
@@ -54,7 +63,6 @@ public class MainActivity extends AppCompatActivity {
         setWinFlags();
 
         ImageView location = findViewById(R.id.location);
-        ImageView calendar = findViewById(R.id.calendar);
 
         location.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,9 +108,61 @@ public class MainActivity extends AppCompatActivity {
         String Uri = sharedPref.getString(getString(R.string.avatar), "");
 
         Picasso.with(this).load(Uri).into(imageView);
-        Log.e("Any","outside");
+        //Log.e("Any","outside");
         fragmentTransaction.commit();
+
+        connectAndGetUpdatedData(BASE_URL);
     }
+
+
+
+    private void saveArraylist(List<?> collection, String KEY){
+        SharedPreferences pref = getApplicationContext().getSharedPreferences(getString(R.string.preferencesKey), 0);
+        SharedPreferences.Editor prefEditor = pref.edit();
+        Gson gson = new Gson();
+        String arrayList1 = gson.toJson(collection);
+        prefEditor.putString(KEY, arrayList1.toString());
+        prefEditor.commit();
+    }
+
+
+    private void connectAndGetUpdatedData(String base_url) {
+        if (retrofit == null){
+            retrofit = new Retrofit.Builder()
+                    .baseUrl(base_url)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+        }
+
+        NucleusInterface nucleusInterface = retrofit.create(NucleusInterface.class);
+        nucleusInterface.getUpdatedData().enqueue(new Callback<UpdatedEventData>() {
+            @Override
+            public void onResponse(Call<UpdatedEventData> call, Response<UpdatedEventData> response) {
+                if (response.isSuccessful()){
+
+
+                    if (response.body().getStatus()){
+                        //lunchActivity();
+
+                        List<Event> thisevent = response.body().getEvents();
+
+                        List<Official> officials = response.body().getOfficials();
+
+                        saveArraylist(thisevent, "events");
+                        saveArraylist(officials, "officials");
+
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<UpdatedEventData> call, Throwable t) {
+
+            }
+        });
+    }
+
+
 
     @Override
     protected void attachBaseContext(Context newBase) {
