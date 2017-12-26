@@ -5,294 +5,302 @@
     xmlns:tools="http://schemas.android.com/tools">
 
 
-    <android.support.constraint.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:scrollbars="none"
+        android:layout_height="wrap_content">
 
-
-        <LinearLayout
-            android:id="@+id/linearLayout2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="32dp"
-            android:layout_marginRight="32dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="8dp">
-
-            <TextView
-                android:id="@+id/name"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="8dp"
-                android:layout_marginLeft="8dp"
-                android:textColor="@color/white"
-                android:layout_marginRight="8dp"
-                android:layout_marginStart="8dp"
-                android:fontFamily="sans-serif-medium"
-                android:text="Blessing Saghana"
-                fontPath="fonts/Cabin/Cabin-Bold-TTF.ttf"
-                tools:ignore="MissingPrefix"
-                android:textSize="40sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="32dp"
-            android:layout_marginRight="32dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="16dp"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="195dp">
-
-            <TextView
-                android:id="@+id/age"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:textSize="16sp"
-                android:layout_marginStart="8dp"
-                android:textColor="@color/white"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:text="Associate-109 years old-(M)"/>
-
-            <TextView
-                android:id="@+id/yearjoined"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp"
-                android:textSize="16sp"
-                android:lineSpacingExtra="2dp"
-                android:textColor="@color/white"
-                android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginTop="15dp"
-                android:text="YD since 1564" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="32dp"
-            android:layout_marginRight="32dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:visibility="gone"
-            android:layout_marginTop="16dp"
-            android:orientation="vertical"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="118dp">
-
-            <TextView
-                android:id="@+id/occupation"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:textSize="16sp"
-                android:textColor="@color/white"
-                android:layout_marginStart="8dp"
-                android:text="Designer for Dolce &amp; Gabbana" />
-
-            <TextView
-                android:id="@+id/phone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:textSize="16sp"
-                android:textColor="@color/white"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="08012345678" />
-
-            <TextView
-                android:id="@+id/email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:textColor="@color/white"
-                android:layout_marginStart="8dp"
-                android:textSize="16sp"
-                android:layout_marginTop="8dp"
-                android:text="rainbow@sunshine.com" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout4"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="32dp"
-            android:layout_marginRight="32dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="16dp"
-            android:orientation="horizontal"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="206dp">
-
-            <TextView
-                android:id="@+id/heardcamp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:textSize="16sp"
-                android:textColor="@color/white"
-                android:lineSpacingExtra="2dp"
-                android:layout_marginStart="8dp"
-                android:text="First heard about Camp Joseph whilr doing a handstand on a bike thin rope on a trampoline on a burning moving train"
-                app:layout_constraintRight_toRightOf="parent" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout5"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="32dp"
-            android:layout_marginRight="32dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="16dp"
-            android:orientation="horizontal"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="273dp">
-
-            <TextView
-                android:id="@+id/notfirst"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:layout_marginLeft="8dp"
-                android:textSize="16sp"
-                android:lineSpacingExtra="2dp"
-                android:layout_marginStart="8dp"
-                android:text="Not first time at Camp Joseph" />
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_marginEnd="32dp"
-            android:layout_marginRight="32dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="16dp"
+        <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:orientation="vertical"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout5"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:scaleType="centerInside"
-                android:id="@+id/ticket"
-                android:src="@drawable/ticket"
-                android:adjustViewBounds="true"
-                android:layout_height="wrap_content" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:visibility="gone"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginRight="32dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="307dp">
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:id="@+id/linearLayout2"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
                 android:orientation="horizontal"
-                android:layout_gravity="center"
-                android:gravity="center_vertical"
-                >
-
-                <ImageView
-                    android:id="@+id/runningicon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@android:drawable/btn_star"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_gravity="center"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
 
                 <TextView
-                    android:id="@+id/attending"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:textColor="@color/white"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginStart="8dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Blessing Saghana"
+                    fontPath="fonts/Cabin/Cabin-Bold-TTF.ttf"
+                    tools:ignore="MissingPrefix"
+                    android:textSize="40sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="195dp">
+
+                <TextView
+                    android:id="@+id/age"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:textSize="16sp"
                     android:layout_marginStart="8dp"
-                    android:text="Attending CJ 2017"
-                    />
+                    android:textColor="@color/white"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="Associate-109 years old-(M)"/>
+
+                <TextView
+                    android:id="@+id/yearjoined"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="8dp"
+                    android:textSize="16sp"
+                    android:lineSpacingExtra="2dp"
+                    android:textColor="@color/white"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="15dp"
+                    android:text="YD since 1564" />
+
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:id="@+id/linearLayout3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:visibility="gone"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="118dp">
 
-                <Button
-                    android:id="@+id/sharebtn"
-                    android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/occupation"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
                     android:layout_marginStart="8dp"
-                    android:layout_marginRight="32dp"
-                    android:layout_marginEnd="32dp"
-                    android:layout_marginTop="10dp"
-                    android:textColor="@color/black"
-                    android:text="Share"
-                    android:layout_weight="1"
-                    android:textAllCaps="false"
-                    android:minHeight="40dp"
-                    android:background="@drawable/white_bg"/>
+                    android:text="Designer for Dolce &amp; Gabbana" />
+
+                <TextView
+                    android:id="@+id/phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="08012345678" />
+
+                <TextView
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:textColor="@color/white"
+                    android:layout_marginStart="8dp"
+                    android:textSize="16sp"
+                    android:layout_marginTop="8dp"
+                    android:text="rainbow@sunshine.com" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="206dp">
+
+                <TextView
+                    android:id="@+id/heardcamp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/white"
+                    android:lineSpacingExtra="2dp"
+                    android:layout_marginStart="8dp"
+                    android:text="First heard about Camp Joseph whilr doing a handstand on a bike thin rope on a trampoline on a burning moving train"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="273dp">
+
+                <TextView
+                    android:id="@+id/notfirst"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:layout_marginLeft="8dp"
+                    android:textSize="16sp"
+                    android:lineSpacingExtra="2dp"
+                    android:layout_marginStart="8dp"
+                    android:text="Not first time at Camp Joseph" />
+
             </LinearLayout>
 
 
+            <LinearLayout
+                android:layout_marginEnd="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="30dp"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout5"
+                android:layout_height="wrap_content">
 
-        </LinearLayout>
-    </android.support.constraint.ConstraintLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:scaleType="centerInside"
+                    android:id="@+id/ticket"
+                    android:src="@drawable/ticket"
+                    android:adjustViewBounds="true"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="307dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:gravity="center_vertical"
+                    >
+
+                    <ImageView
+                        android:id="@+id/runningicon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@android:drawable/btn_star"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_gravity="center"/>
+
+                    <TextView
+                        android:id="@+id/attending"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:textSize="16sp"
+                        android:layout_marginStart="8dp"
+                        android:text="Attending CJ 2017"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/sharebtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginRight="32dp"
+                        android:layout_marginEnd="32dp"
+                        android:layout_marginTop="10dp"
+                        android:textColor="@color/black"
+                        android:text="Share"
+                        android:layout_weight="1"
+                        android:textAllCaps="false"
+                        android:minHeight="40dp"
+                        android:background="@drawable/white_bg"/>
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+        </android.support.constraint.ConstraintLayout>
+
+    </ScrollView>
 
 </layout>

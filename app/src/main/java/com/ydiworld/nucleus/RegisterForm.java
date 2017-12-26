@@ -22,11 +22,17 @@ import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.ydiworld.nucleus.databinding.ActivityRegisterFormBinding;
 
 import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEvent;
 import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEventListener;
 import net.yslibrary.android.keyboardvisibilityevent.Unregistrar;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -330,6 +336,30 @@ public class RegisterForm extends AppCompatActivity {
     }
 
 
+    private void saveArraylist(List<?> collection, String KEY){
+        SharedPreferences pref = getApplicationContext().getSharedPreferences(getString(R.string.preferencesKey), 0);
+        SharedPreferences.Editor prefEditor = pref.edit();
+        Gson gson = new Gson();
+        String arrayList1 = gson.toJson(collection);
+        prefEditor.putString(KEY, arrayList1.toString());
+        prefEditor.commit();
+    }
+
+    private List<?> getArrayList(String KEY){
+        SharedPreferences pref = getApplicationContext().getSharedPreferences(getString(R.string.preferencesKey), 0);
+        SharedPreferences.Editor prefEditor = pref.edit();
+        //String storedCollection = pref.getString(KEY, null);
+
+        List<?> collection = new ArrayList<>();
+        Gson gson = new Gson();
+        String arrayListString = pref.getString(KEY, null);
+        Type type = new TypeToken<List<?>>() {}.getType();
+        collection = gson.fromJson(arrayListString, type);
+
+        return collection;
+    }
+
+
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
@@ -374,6 +404,13 @@ public class RegisterForm extends AppCompatActivity {
 
                         String tribe = response.body().getTribe();
                         String parti_id = response.body().getID();
+
+                        List<Event> thisevent = response.body().getEvents();
+
+                        List<Official> officials = response.body().getOfficials();
+
+                        saveArraylist(thisevent, "events");
+                        saveArraylist(officials, "officials");
 
 
                         SharedPreferences sharedPref = getSharedPreferences(getString(R.string.preferencesKey), Context.MODE_PRIVATE);

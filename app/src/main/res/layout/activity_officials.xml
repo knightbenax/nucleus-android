@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient_bg"
+        tools:context="com.ydiworld.nucleus.OfficialsActivity">
+
+    <LinearLayout
+        android:baselineAligned="true"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="30dp"
+        android:paddingBottom="30dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/white_text_bg"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:textColor="@color/black"
+            android:text="@string/camp_officials"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="match_parent">
+
+
+            <android.support.constraint.ConstraintLayout
+                android:paddingRight="6dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                >
+
+                <ImageView
+                    android:id="@+id/person"
+                    android:layout_width="58dp"
+                    android:layout_height="58dp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/user_icon_empty"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:scaleType="centerInside"
+                    android:scaleX="1"
+                    android:scaleY="1"
+                    android:adjustViewBounds="true"/>
+
+                <ImageView
+                    android:id="@+id/location"
+                    android:layout_width="58dp"
+                    android:layout_height="58dp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/location_empty"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/person"
+
+                    android:scaleType="centerInside"
+                    android:scaleX="1"
+                    android:scaleY="1"
+                    android:adjustViewBounds="true"/>
+
+                <ImageView
+                    android:id="@+id/calendar"
+                    android:layout_width="58dp"
+                    android:layout_height="58dp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/prog_empty"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/location"
+
+                    android:scaleType="centerInside"
+                    android:scaleX="1"
+                    android:scaleY="1"
+                    android:adjustViewBounds="true"/>
+
+                <ImageView
+                    android:id="@+id/speakers"
+                    android:layout_width="58dp"
+                    android:layout_height="58dp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/speakers_empty"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/calendar"
+
+                    android:scaleType="centerInside"
+                    android:scaleX="1"
+                    android:scaleY="1"
+                    android:adjustViewBounds="true"/>
+
+                <ImageView
+                    android:id="@+id/details"
+                    android:layout_width="58dp"
+                    android:layout_height="58dp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/details"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/speakers"
+
+                    android:scaleType="centerInside"
+                    android:scaleX="1"
+                    android:scaleY="1"
+                    android:adjustViewBounds="true"/>
+            </android.support.constraint.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/contentText"
+                        android:layout_width="match_parent"
+                        android:layout_marginBottom="30dp"
+                        android:layout_height="wrap_content" />
+
+
+                </ScrollView>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</layout>

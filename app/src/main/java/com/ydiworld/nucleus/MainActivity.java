@@ -60,6 +60,36 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        ImageView prog = findViewById(R.id.calendar);
+
+        prog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, EventActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageView speakers = findViewById(R.id.speakers);
+
+        speakers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SpeakersActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ImageView details = findViewById(R.id.details);
+
+        details.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, OfficialsActivity.class);
+                startActivity(intent);
+            }
+        });
+
         ImageView imageView = findViewById(R.id.back_bg);
 
         SharedPreferences sharedPref = getSharedPreferences(getString(R.string.preferencesKey), Context.MODE_PRIVATE);

@@ -1,158 +1,352 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/datebg"
-        android:layout_marginTop="20dp"
-        android:scrollbars="none"
+    <LinearLayout
+        android:baselineAligned="true"
+        android:orientation="vertical"
+
+
+
+        android:paddingTop="30dp"
+        android:paddingBottom="30dp"
+        android:background="@drawable/gradient_bg">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:textSize="16sp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/white_text_bg"
         android:paddingTop="5dp"
-        android:paddingBottom="5dp">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+        android:paddingBottom="5dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:textColor="@color/black"
+        android:text="@string/programme"
+        android:layout_height="wrap_content" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:id="@+id/firstdate"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="27"
-                    android:textStyle="bold"
-                    android:textSize="50sp"
-                    android:minHeight="5dp"
-                    android:textColor="#ffffff"/>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginLeft="3dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="DEC"
-                        android:textStyle="bold"
-                        android:textSize="20sp"
-                        android:minHeight="0dp"
-                        android:layout_marginTop="10dp"
-                        android:textColor="#ffffff"/>
-                    <ImageView
-                        android:layout_width="15dp"
-                        android:layout_height="3dp"
-                        android:src="@drawable/thickstroke"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Wednesday"
-                        android:textStyle="normal"
-                        android:textSize="13sp"
-                        android:textColor="#ffffff"/>
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:id="@+id/secdate"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="28"
-                    android:textStyle="bold"
-                    android:textSize="50sp"
-                    android:minHeight="5dp"
-                    android:textColor="#ffffff"/>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginLeft="3dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="DEC"
-                        android:textStyle="bold"
-                        android:textSize="20sp"
-                        android:minHeight="0dp"
-                        android:layout_marginTop="10dp"
-                        android:textColor="#ffffff"/>
-                    <ImageView
-                        android:layout_width="15dp"
-                        android:layout_height="3dp"
-                        android:src="@drawable/thickstroke"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Wednesday"
-                        android:textStyle="normal"
-                        android:textSize="13sp"
-                        android:textColor="#ffffff"/>
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:id="@+id/thirddate"
-                android:layout_marginStart="10dp"
-                android:layout_marginLeft="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="29"
-                    android:textStyle="bold"
-                    android:textSize="50sp"
-                    android:minHeight="5dp"
-                    android:textColor="#ffffff"/>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginLeft="3dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="DEC"
-                        android:textStyle="bold"
-                        android:textSize="20sp"
-                        android:minHeight="0dp"
-                        android:layout_marginTop="10dp"
-                        android:textColor="#ffffff"/>
-                    <ImageView
-                        android:layout_width="15dp"
-                        android:layout_height="3dp"
-                        android:src="@drawable/thickstroke"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Wednesday"
-                        android:textStyle="normal"
-                        android:textSize="13sp"
-                        android:textColor="#ffffff"/>
-                </LinearLayout>
-            </LinearLayout>
-
-        </LinearLayout>
-    </HorizontalScrollView>
-
-    <android.support.v7.widget.RecyclerView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/event_recycler"
-        android:layout_marginTop="16dp"/>
+        android:orientation="horizontal">
 
-</LinearLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <android.support.constraint.ConstraintLayout
+                android:paddingRight="6dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                >
+
+                <ImageView
+                    android:id="@+id/person"
+                    android:layout_width="58dp"
+                    android:layout_height="58dp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/user_icon_empty"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:scaleType="centerInside"
+                    android:scaleX="1"
+                    android:scaleY="1"
+                    android:adjustViewBounds="true"/>
+
+                <ImageView
+                    android:id="@+id/location"
+                    android:layout_width="58dp"
+                    android:layout_height="58dp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/location_empty"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/person"
+
+                    android:scaleType="centerInside"
+                    android:scaleX="1"
+                    android:scaleY="1"
+                    android:adjustViewBounds="true"/>
+
+                <ImageView
+                    android:id="@+id/calendar"
+                    android:layout_width="58dp"
+                    android:layout_height="58dp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/prog"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/location"
+
+                    android:scaleType="centerInside"
+                    android:scaleX="1"
+                    android:scaleY="1"
+                    android:adjustViewBounds="true"/>
+
+                <ImageView
+                    android:id="@+id/speakers"
+                    android:layout_width="58dp"
+                    android:layout_height="58dp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/speakers_empty"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/calendar"
+
+                    android:scaleType="centerInside"
+                    android:scaleX="1"
+                    android:scaleY="1"
+                    android:adjustViewBounds="true"/>
+
+                <ImageView
+                    android:id="@+id/details"
+                    android:layout_width="58dp"
+                    android:layout_height="58dp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/details_empty"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/speakers"
+
+                    android:scaleType="centerInside"
+                    android:scaleX="1"
+                    android:scaleY="1"
+                    android:adjustViewBounds="true"/>
+            </android.support.constraint.ConstraintLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical" android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:id="@+id/firstdate"
+                        android:background="@drawable/green_bg_padding"
+
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="27"
+                            android:textStyle="bold"
+                            fontPath="fonts/Cabin/Cabin-Bold-TTF.ttf"
+                            tools:ignore="MissingPrefix"
+                            android:textSize="50sp"
+                            android:textColor="@color/black"/>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+
+                            android:layout_marginLeft="3dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="DEC"
+                                android:textStyle="bold"
+                                android:textSize="20sp"
+                                android:minHeight="0dp"
+                                android:layout_marginTop="10dp"
+                                android:textColor="@color/black"/>
+                            <ImageView
+                                android:layout_width="15dp"
+                                android:layout_height="3dp"
+                                android:src="@drawable/thickstroke"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Thursday"
+                                android:textStyle="normal"
+                                android:textSize="13sp"
+                                android:textColor="@color/black"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:id="@+id/secdate"
+                        android:background="@drawable/green_bg_padding_trans"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="28"
+                            android:textStyle="bold"
+                            fontPath="fonts/Cabin/Cabin-Bold-TTF.ttf"
+                            tools:ignore="MissingPrefix"
+                            android:textSize="50sp"
+                            android:minHeight="5dp"
+                            android:textColor="@color/black"/>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginLeft="3dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="DEC"
+                                android:textStyle="bold"
+                                android:textSize="20sp"
+                                android:minHeight="0dp"
+                                android:layout_marginTop="10dp"
+                                android:textColor="@color/black"/>
+                            <ImageView
+                                android:layout_width="15dp"
+                                android:layout_height="3dp"
+                                android:src="@drawable/thickstroke"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Friday"
+                                android:textStyle="normal"
+                                android:textSize="13sp"
+                                android:textColor="@color/black"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:id="@+id/thirddate"
+                        android:background="@drawable/green_bg_padding_trans"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="29"
+                            android:textStyle="bold"
+                            android:textSize="50sp"
+                            fontPath="fonts/Cabin/Cabin-Bold-TTF.ttf"
+                            tools:ignore="MissingPrefix"
+                            android:minHeight="5dp"
+                            android:textColor="@color/black"/>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginLeft="3dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="DEC"
+                                android:textStyle="bold"
+                                android:textSize="20sp"
+                                android:minHeight="0dp"
+                                android:layout_marginTop="10dp"
+                                android:textColor="@color/black"/>
+                            <ImageView
+                                android:layout_width="15dp"
+                                android:layout_height="3dp"
+                                android:src="@drawable/thickstroke"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Wednesday"
+                                android:textStyle="normal"
+                                android:textSize="13sp"
+                                android:textColor="@color/black"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:id="@+id/fourthdate"
+                        android:background="@drawable/green_bg_padding_trans"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginEnd="30dp"
+                        android:layout_marginLeft="10dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="30"
+                            android:textStyle="bold"
+                            android:textSize="50sp"
+                            fontPath="fonts/Cabin/Cabin-Bold-TTF.ttf"
+                            tools:ignore="MissingPrefix"
+                            android:minHeight="5dp"
+                            android:textColor="@color/black"/>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginLeft="3dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="DEC"
+                                android:textStyle="bold"
+                                android:textSize="20sp"
+                                android:minHeight="0dp"
+                                android:layout_marginTop="10dp"
+                                android:textColor="@color/black"/>
+                            <ImageView
+                                android:layout_width="15dp"
+                                android:layout_height="3dp"
+                                android:src="@drawable/thickstroke"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Saturday"
+                                android:textStyle="normal"
+                                android:textSize="13sp"
+                                android:textColor="@color/black"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/event_recycler"
+                android:layout_marginBottom="40dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    </LinearLayout>
+</layout>
+
