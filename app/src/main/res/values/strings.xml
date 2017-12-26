@@ -5,11 +5,12 @@
     <string name="register">Register</string>
     <string name="signin">Registered? Sign In</string>
     <string name="preferencesKey">com.ydiworld.nucleus</string>
-    <string name="venue">Venue:</string>
+    <string name="venue">Venue</string>
     <string name="theplace">Faith Academy,\nCanaanland, Ota</string>
     <string name="uber">Uber</string>
     <string name="direction">Directions</string>
     <string name="full_name">Full Name</string>
+    <string name="avatar">Avatar</string>
     <string name="full_name_hint">Your firstname + surname</string>
     <string name="phone_number">Phone Number</string>
     <string name="email_address">Email Address</string>
@@ -26,4 +27,7 @@
     <string name="student_graduate_engineer_batman">Student? Graduate? Engineer? Batman?</string>
     <string name="always_a_first_time_for_everything">Always a first time for everything</string>
     <string name="sign_in">Sign In</string>
+    <string name="title_activity_choose_photo">ChoosePhotoActivity</string>
+    <string name="one_more_step_choose_a_photo_that_would_be_used_as_your_avatar">One more step. Choose a photo that would be used as your Avatar</string>
+    <string name="choose_photo">Choose Photo</string>
 </resources>

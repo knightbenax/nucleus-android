@@ -32,7 +32,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
         //if the user has previously registered or signin, just log them straight
         SharedPreferences sharedPref = getSharedPreferences(getString(R.string.preferencesKey), Context.MODE_PRIVATE);
-        String User = sharedPref.getString(getString(R.string.full_name), "");
+        String User = sharedPref.getString(getString(R.string.avatar), "");
 
         if(User.equals("")){
 

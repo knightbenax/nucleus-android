@@ -96,7 +96,7 @@ public class RegisterForm extends AppCompatActivity {
                 userGender = binding.gender.getText().toString();
 
                 if (fullName.equals("")){
-                    showBasicDialog("Field empty" + fullName, "You haven't filled out your name yet.", "Okay");
+                    showBasicDialog("Field empty", "You haven't filled out your name yet.", "Okay");
                 } else if (userPhone.equals("")){
                     showBasicDialog("Field empty", "You haven't filled out your phone number.", "Okay");
                 } else if (userEmail.equals("")){
@@ -390,7 +390,12 @@ public class RegisterForm extends AppCompatActivity {
                         editor.putString(getString(R.string.last_id), parti_id).commit();
                         editor.commit();
 
-                        launchActivity(fullname, phone,email,hear,career, first, gender, tribe);
+
+                        //launch Avatar Chooser
+                        Intent intent = new Intent(RegisterForm.this, ChoosePhotoActivity.class);
+                        startActivity(intent);
+                        finish();
+                        //launchActivity(fullname, phone,email,hear,career, first, gender, tribe);
 
                     } else {
 
@@ -401,7 +406,6 @@ public class RegisterForm extends AppCompatActivity {
                             binding.content.setVisibility(View.VISIBLE);
                             binding.loader.setVisibility(View.GONE);
                         }
-
 
                     }
 
