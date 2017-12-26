@@ -12,6 +12,7 @@ public class Official {
     @SerializedName("title")
     @Expose
     private String title;
+
     @SerializedName("body")
     @Expose
     private String body;

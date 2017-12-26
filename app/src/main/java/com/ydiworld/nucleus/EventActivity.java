@@ -1,7 +1,5 @@
 package com.ydiworld.nucleus;
 
-import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -14,7 +12,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -22,11 +19,12 @@ import android.widget.ImageView;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.squareup.picasso.Picasso;
 import com.ydiworld.nucleus.databinding.ActivityEventBinding;
 
 import java.lang.reflect.Type;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
@@ -127,8 +125,57 @@ public class EventActivity extends AppCompatActivity {
         binding.eventRecycler.setLayoutManager(mLayoutManager);
         binding.eventRecycler.setHasFixedSize(true);
 
-        thisAdapter.eventList = this_events.get(0).getContent();
-        thisAdapter.notifyDataSetChanged();
+
+        Calendar c = Calendar.getInstance();
+        System.out.println("Current time => " + c.getTime());
+
+        SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy");
+        String formattedDate = df.format(c.getTime());
+
+        if (formattedDate.equals("27-Dec-2017")){
+            thisAdapter.eventList = this_events.get(0).getContent();
+            thisAdapter.notifyDataSetChanged();
+
+            binding.firstdate.setBackgroundResource(R.drawable.green_bg_padding);
+            binding.secdate.setBackgroundResource(R.drawable.green_bg_padding_trans);
+            binding.thirddate.setBackgroundResource(R.drawable.green_bg_padding_trans);
+            binding.fourthdate.setBackgroundResource(R.drawable.green_bg_padding_trans);
+        } else if (formattedDate.equals("28-Dec-2017")){
+            thisAdapter.eventList = this_events.get(1).getContent();
+            thisAdapter.notifyDataSetChanged();
+
+            binding.firstdate.setBackgroundResource(R.drawable.green_bg_padding_trans);
+            binding.secdate.setBackgroundResource(R.drawable.green_bg_padding);
+            binding.thirddate.setBackgroundResource(R.drawable.green_bg_padding_trans);
+            binding.fourthdate.setBackgroundResource(R.drawable.green_bg_padding_trans);
+        } else if (formattedDate.equals("29-Dec-2017")){
+            thisAdapter.eventList = this_events.get(2).getContent();
+            thisAdapter.notifyDataSetChanged();
+
+            binding.firstdate.setBackgroundResource(R.drawable.green_bg_padding_trans);
+            binding.secdate.setBackgroundResource(R.drawable.green_bg_padding_trans);
+            binding.thirddate.setBackgroundResource(R.drawable.green_bg_padding);
+            binding.fourthdate.setBackgroundResource(R.drawable.green_bg_padding_trans);
+        } else if(formattedDate.equals("30-Dec-2017")) {
+            thisAdapter.eventList = this_events.get(3).getContent();
+            thisAdapter.notifyDataSetChanged();
+
+            binding.firstdate.setBackgroundResource(R.drawable.green_bg_padding_trans);
+            binding.secdate.setBackgroundResource(R.drawable.green_bg_padding_trans);
+            binding.thirddate.setBackgroundResource(R.drawable.green_bg_padding_trans);
+            binding.fourthdate.setBackgroundResource(R.drawable.green_bg_padding);
+        } else {
+
+            thisAdapter.eventList = this_events.get(0).getContent();
+            thisAdapter.notifyDataSetChanged();
+
+            binding.firstdate.setBackgroundResource(R.drawable.green_bg_padding);
+            binding.secdate.setBackgroundResource(R.drawable.green_bg_padding_trans);
+            binding.thirddate.setBackgroundResource(R.drawable.green_bg_padding_trans);
+            binding.fourthdate.setBackgroundResource(R.drawable.green_bg_padding_trans);
+        }
+
+
 
         binding.firstdate.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -41,11 +41,6 @@ public class MainActivity extends AppCompatActivity {
         setThingsUp();
     }
 
-    private void changeScreens(String screen){
-        if(screen == "person"){
-            
-        }
-    }
 
     private void setThingsUp(){
         setWinFlags();

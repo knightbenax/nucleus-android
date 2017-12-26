@@ -6,12 +6,14 @@ import android.databinding.DataBindingUtil;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.ydiworld.nucleus.databinding.ActivityEventBinding;
+import com.ydiworld.nucleus.databinding.ActivityOfficialsBinding;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -21,7 +23,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class OfficialsActivity extends AppCompatActivity {
 
-    ActivityEventBinding binding;
+    ActivityOfficialsBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,10 @@ public class OfficialsActivity extends AppCompatActivity {
 
         List<Official> this_officials = getArrayList("officials");
 
+        Log.e("X", String.valueOf(this_officials.size()));
+        Log.e("X", String.valueOf(this_officials.get(0)));
+        Log.e("X", String.valueOf(this_officials.get(0).getBody()));
+        //binding.contentText.setText(this_officials.get(0).getBody() + this_officials.get(1).getTitle() + this_officials.get(1).getBody() + this_officials.get(2).getTitle() + this_officials.get(2).getBody());
 
     }
 
