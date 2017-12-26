@@ -32,6 +32,8 @@
             android:layout_marginStart="8dp"
             android:fontFamily="sans-serif-medium"
             android:text="Blessing Saghana"
+            fontPath="fonts/Cabin/Cabin-Bold-TTF.ttf"
+            tools:ignore="MissingPrefix"
             android:textSize="40sp"
             android:textStyle="bold" />
 
