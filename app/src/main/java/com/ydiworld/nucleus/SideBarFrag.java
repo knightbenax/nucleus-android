@@ -23,7 +23,7 @@ public class SideBarFrag extends Fragment{
         ImageView locationImg = (ImageView)view.findViewById(R.id.location);
         ImageView calendarImg = (ImageView)view.findViewById(R.id.calendar);
 
-        personImg.setImageResource(R.drawable.man);
+        /*personImg.setImageResource(R.drawable.man);
         personImg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -32,7 +32,7 @@ public class SideBarFrag extends Fragment{
         });
 
         locationImg.setImageResource(R.drawable.placeholder);
-        calendarImg.setImageResource(R.drawable.calendar);
+        calendarImg.setImageResource(R.drawable.calendar);*/
 
         return view;
     }

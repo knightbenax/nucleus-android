@@ -3,6 +3,7 @@ package com.ydiworld.nucleus;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.databinding.DataBindingUtil;
 import android.os.Build;
@@ -41,6 +42,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 public class RegisterForm extends AppCompatActivity {
 
     EditText name,phone,email,hear,career,first,gender;
+    String fullName, userPhone, userEmail, userHear, userCareer, userFirst, userGender;
     Button regUserBtn;
     private final String BASE_URL = "http://campjoseph.ydiworld.org/";
     private Retrofit retrofit = null;
@@ -80,16 +82,18 @@ public class RegisterForm extends AppCompatActivity {
 
         setThingsUp();
 
+
+
         binding.registerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String fullName = binding.fullname.getText().toString();
-                String userPhone = binding.phone.getText().toString();
-                String userEmail = binding.email.getText().toString();
-                String userHear = binding.hear.getText().toString();
-                String userCareer = binding.career.getText().toString();
-                String userFirst = binding.first.getText().toString();
-                String userGender = binding.gender.getText().toString();
+                fullName = binding.fullname.getText().toString();
+                userPhone = binding.phone.getText().toString();
+                userEmail = binding.email.getText().toString();
+                userHear = binding.hear.getText().toString();
+                userCareer = binding.career.getText().toString();
+                userFirst = binding.first.getText().toString();
+                userGender = binding.gender.getText().toString();
 
                 if (fullName.equals("")){
                     showBasicDialog("Field empty" + fullName, "You haven't filled out your name yet.", "Okay");
@@ -332,7 +336,7 @@ public class RegisterForm extends AppCompatActivity {
     }
 
 
-    private void connectApi(String base_url, String fullname, String userPhone, String userEmail, String userHear, String usercareer, String userFirst, String userGender) {
+    private void connectApi(String base_url, String fullname, final String userPhone, final String userEmail, final String userHear, String usercareer, final String userFirst, final String userGender) {
         if (retrofit == null){
             retrofit = new Retrofit.Builder()
                     .baseUrl(base_url)
@@ -351,14 +355,42 @@ public class RegisterForm extends AppCompatActivity {
                     if (response.body().getStatus()){
 
                         //Log.e("X", response.body().getStatus().toString());
-                        String fullname = response.body().getParticipant().getFullname();
+                        /*String fullname = response.body().getParticipant().getFullname();
                         String phone = response.body().getParticipant().getPhone();
                         String email = response.body().getParticipant().getEmail();
                         String hear = response.body().getParticipant().getHearAboutCamp();
                         String career = response.body().getParticipant().getCareer();
                         String first = response.body().getParticipant().getFirstTimeAtCamp();
                         String gender = response.body().getParticipant().getGender();
-                        lunchActivity(fullname,phone,email,hear,career,first,gender);
+                        lunchActivity(fullname,phone,email,hear,career,first,gender);*/
+
+                        String fullname = fullName;
+                        String phone = userPhone;
+                        String email = userEmail;
+                        String hear = userHear;
+                        String career = userCareer;
+                        String first = userFirst;
+                        String gender = userGender;
+
+                        String tribe = response.body().getTribe();
+                        String parti_id = response.body().getID();
+
+
+                        SharedPreferences sharedPref = getSharedPreferences(getString(R.string.preferencesKey), Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPref.edit();
+
+                        editor.putString(getString(R.string.full_name), fullname).commit();
+                        editor.putString(getString(R.string.phone_number), phone).commit();
+                        editor.putString(getString(R.string.email_address), email).commit();
+                        editor.putString(getString(R.string.hear_from), hear).commit();
+                        editor.putString(getString(R.string.career), career).commit();
+                        editor.putString(getString(R.string.first_time), first).commit();
+                        editor.putString(getString(R.string.gender), gender).commit();
+                        editor.putString(getString(R.string.tribe), tribe).commit();
+                        editor.putString(getString(R.string.last_id), parti_id).commit();
+                        editor.commit();
+
+                        launchActivity(fullname, phone,email,hear,career, first, gender, tribe);
 
                     } else {
 
@@ -383,9 +415,9 @@ public class RegisterForm extends AppCompatActivity {
         });
     }
 
-    private void lunchActivity(String name,String phone, String email, String hear, String career, String first, String gender){
+    private void launchActivity(String name, String phone, String email, String hear, String career, String first, String gender, String tribe){
         Intent intent = new Intent(this, MainActivity.class);
-        Bundle bundle = new Bundle();
+        /*Bundle bundle = new Bundle();
         bundle.putString("fullname", name);
         bundle.putString("phone", phone);
         bundle.putString("email", email);
@@ -393,7 +425,8 @@ public class RegisterForm extends AppCompatActivity {
         bundle.putString("career", career);
         bundle.putString("first", first);
         bundle.putString("gender", gender);
-        intent.putExtra("userDetail", bundle);
+        bundle.putString("tribe", tribe);
+        intent.putExtra("userDetail", bundle);*/
         startActivity(intent);
     }
 }

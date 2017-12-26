@@ -26,7 +26,7 @@ public interface NucleusInterface {
 
     @POST("/api/register/participant")
     @FormUrlEncoded
-    Call<NewUser> siginInUser(
+    Call<ExistingUser> siginInUser(
             @Field("email") String email
     );
 }

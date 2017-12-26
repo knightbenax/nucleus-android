@@ -15,7 +15,6 @@
         android:layout_marginRight="32dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="32dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,7 +32,9 @@
             android:layout_marginStart="8dp"
             android:fontFamily="sans-serif-medium"
             android:text="Blessing Saghana"
-            android:textSize="30sp"
+            fontPath="fonts/Cabin/Cabin-Bold-TTF.ttf"
+            tools:ignore="MissingPrefix"
+            android:textSize="40sp"
             android:textStyle="bold" />
 
     </LinearLayout>
@@ -59,6 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
+            android:textSize="16sp"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
@@ -70,6 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
+            android:textSize="16sp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginTop="8dp"
@@ -99,6 +102,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
+            android:textSize="16sp"
             android:layout_marginStart="8dp"
             android:text="Designer for Dolce &amp; Gabbana" />
 
@@ -107,6 +111,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
+            android:textSize="16sp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="08012345678" />
@@ -117,6 +122,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
+            android:textSize="16sp"
             android:layout_marginTop="8dp"
             android:text="rainbow@sunshine.com" />
 
@@ -143,6 +149,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
+            android:textSize="16sp"
             android:layout_marginStart="8dp"
             android:text="First herard about Camp Joseph whilr doing a handstand on a bike thin rope on a trampoline on a burning moving train"
             app:layout_constraintRight_toRightOf="parent" />
@@ -177,6 +184,7 @@
 
     <LinearLayout
         android:layout_width="0dp"
+        android:visibility="gone"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         android:layout_marginEnd="32dp"
@@ -212,6 +220,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
+                android:textSize="16sp"
                 android:layout_marginStart="8dp"
                 android:text="Attending CJ 2017"
                 />

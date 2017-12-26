@@ -2,6 +2,7 @@ package com.ydiworld.nucleus;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.databinding.DataBindingUtil;
 import android.os.Build;
@@ -28,6 +29,20 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
         registerBtn = findViewById(R.id.regBtn);
         //registerBtn.setOnClickListener(this);
+
+        //if the user has previously registered or signin, just log them straight
+        SharedPreferences sharedPref = getSharedPreferences(getString(R.string.preferencesKey), Context.MODE_PRIVATE);
+        String User = sharedPref.getString(getString(R.string.full_name), "");
+
+        if(User.equals("")){
+
+        } else {
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent.putExtra("EXIT", true);
+            startActivity(intent);
+            finish();
+        }
 
         setThingsUp();
     }
