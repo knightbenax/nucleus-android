@@ -97,7 +97,12 @@ public class SignInForm extends AppCompatActivity {
             callThePolice();
         }
 
-
+        binding.backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
     }
 
@@ -268,6 +273,7 @@ public class SignInForm extends AppCompatActivity {
                         editor.putString(getString(R.string.gender), gender).commit();
                         editor.putString(getString(R.string.tribe), tribe).commit();
                         editor.putString(getString(R.string.last_id), parti_id).commit();
+                        editor.commit();
 
                         Intent intent = new Intent(SignInForm.this, ChoosePhotoActivity.class);
                         startActivity(intent);
