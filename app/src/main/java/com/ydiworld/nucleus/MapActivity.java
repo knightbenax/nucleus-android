@@ -115,7 +115,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
             }
         });
 
-        ImageView details = findViewById(R.id.speakers);
+        ImageView details = findViewById(R.id.details);
 
         details.setOnClickListener(new View.OnClickListener() {
             @Override

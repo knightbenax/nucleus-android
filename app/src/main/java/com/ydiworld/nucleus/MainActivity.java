@@ -9,17 +9,23 @@ import android.content.SharedPreferences;
 import android.media.Image;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 
+import com.afollestad.materialdialogs.DialogAction;
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.google.gson.Gson;
 import com.squareup.picasso.Picasso;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 
@@ -38,9 +44,6 @@ public class MainActivity extends AppCompatActivity {
 
     private FragmentTransaction fragmentTransaction;
     Fragment personFrag = new PersonFrag();
-    Fragment eventFrag = new EventFrag();
-    String fromActivity;
-    SharedPreferences sharedPreferences;
     Bundle bundle;
 
     private final String BASE_URL = "http://campjoseph.ydiworld.org/";
@@ -55,6 +58,9 @@ public class MainActivity extends AppCompatActivity {
 
         fragmentTransaction = getFragmentManager().beginTransaction();
         fragmentTransaction.add(R.id.mainArea, personFrag);
+        fragmentTransaction.commit();
+
+
         setThingsUp();
     }
 
@@ -109,11 +115,11 @@ public class MainActivity extends AppCompatActivity {
 
         Picasso.with(this).load(Uri).into(imageView);
         //Log.e("Any","outside");
-        fragmentTransaction.commit();
+
 
         connectAndGetUpdatedData(BASE_URL);
-    }
 
+    }
 
 
     private void saveArraylist(List<?> collection, String KEY){

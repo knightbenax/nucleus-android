@@ -38,7 +38,7 @@ public interface NucleusInterface {
 
     @POST("/api/register/markasarrived")
     @FormUrlEncoded
-    Call<UpdatedEventData> markAsArrived(
-
+    Call<Arrived> markAsArrived(
+            @Field("id") String id
     );
 }
